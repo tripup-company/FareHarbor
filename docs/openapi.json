@@ -469,7 +469,27 @@
             "type" : "string"
           },
           "address" : {
-            "$ref" : "#/components/schemas/Location_address"
+            "$ref" : "#/components/schemas/Address"
+          }
+        }
+      },
+      "Address" : {
+        "type" : "object",
+        "properties" : {
+          "city" : {
+            "type" : "string"
+          },
+          "country" : {
+            "type" : "string"
+          },
+          "postal_code" : {
+            "type" : "string"
+          },
+          "province" : {
+            "type" : "string"
+          },
+          "street" : {
+            "type" : "string"
           }
         }
       },
@@ -618,6 +638,20 @@
           }
         }
       },
+      "Contact" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "phone" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          }
+        }
+      },
       "Booking" : {
         "type" : "object",
         "properties" : {
@@ -628,7 +662,7 @@
             "type" : "string"
           },
           "contact" : {
-            "$ref" : "#/components/schemas/Booking_contact"
+            "$ref" : "#/components/schemas/Contact"
           },
           "customers" : {
             "type" : "array",
@@ -652,11 +686,45 @@
           }
         }
       },
+      "BookingResponseAvailability" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "start_at" : {
+            "type" : "string"
+          },
+          "end_at" : {
+            "type" : "string"
+          },
+          "capacity" : {
+            "type" : "integer"
+          },
+          "item" : {
+            "$ref" : "#/components/schemas/BookingResponseAvailability_item"
+          },
+          "customer_type_rates" : {
+            "$ref" : "#/components/schemas/BookingResponseAvailability_customer_type_rates"
+          }
+        }
+      },
       "BookingResponse" : {
         "type" : "object",
         "properties" : {
           "booking" : {
             "$ref" : "#/components/schemas/BookingResponse_booking"
+          }
+        }
+      },
+      "CustomerCheckInStatus" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "type" : {
+            "type" : "string"
           }
         }
       },
@@ -667,10 +735,33 @@
             "type" : "string"
           },
           "checkin_status" : {
-            "$ref" : "#/components/schemas/Customer_checkin_status"
+            "$ref" : "#/components/schemas/CustomerCheckInStatus"
           },
           "customer_type_rate" : {
-            "$ref" : "#/components/schemas/Customer_customer_type_rate"
+            "$ref" : "#/components/schemas/CustomerTypeRateResponse"
+          }
+        }
+      },
+      "CustomerTypeRateResponse" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "total" : {
+            "type" : "integer"
+          },
+          "capacity" : {
+            "type" : "integer"
+          },
+          "is_exclusive" : {
+            "type" : "boolean"
+          },
+          "customer_type" : {
+            "$ref" : "#/components/schemas/CustomerType"
+          },
+          "customer_prototype" : {
+            "$ref" : "#/components/schemas/CustomerBookingPrototype"
           }
         }
       },
@@ -705,41 +796,7 @@
           }
         }
       },
-      "Location_address" : {
-        "type" : "object",
-        "properties" : {
-          "city" : {
-            "type" : "string"
-          },
-          "country" : {
-            "type" : "string"
-          },
-          "postal_code" : {
-            "type" : "string"
-          },
-          "province" : {
-            "type" : "string"
-          },
-          "street" : {
-            "type" : "string"
-          }
-        }
-      },
-      "Booking_contact" : {
-        "type" : "object",
-        "properties" : {
-          "name" : {
-            "type" : "string"
-          },
-          "phone" : {
-            "type" : "string"
-          },
-          "email" : {
-            "type" : "string"
-          }
-        }
-      },
-      "BookingResponse_booking_availability_item" : {
+      "BookingResponseAvailability_item" : {
         "type" : "object",
         "properties" : {
           "pk" : {
@@ -750,7 +807,7 @@
           }
         }
       },
-      "BookingResponse_booking_availability_customer_type_rates_customer_type" : {
+      "BookingResponseAvailability_customer_type_rates_customer_type" : {
         "type" : "object",
         "properties" : {
           "pk" : {
@@ -767,7 +824,7 @@
           }
         }
       },
-      "BookingResponse_booking_availability_customer_type_rates_customer_prototype" : {
+      "BookingResponseAvailability_customer_type_rates_customer_prototype" : {
         "type" : "object",
         "properties" : {
           "pk" : {
@@ -781,7 +838,7 @@
           }
         }
       },
-      "BookingResponse_booking_availability_customer_type_rates" : {
+      "BookingResponseAvailability_customer_type_rates" : {
         "type" : "object",
         "properties" : {
           "pk" : {
@@ -797,33 +854,10 @@
             "type" : "boolean"
           },
           "customer_type" : {
-            "$ref" : "#/components/schemas/BookingResponse_booking_availability_customer_type_rates_customer_type"
+            "$ref" : "#/components/schemas/BookingResponseAvailability_customer_type_rates_customer_type"
           },
           "customer_prototype" : {
-            "$ref" : "#/components/schemas/BookingResponse_booking_availability_customer_type_rates_customer_prototype"
-          }
-        }
-      },
-      "BookingResponse_booking_availability" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
-          },
-          "start_at" : {
-            "type" : "string"
-          },
-          "end_at" : {
-            "type" : "string"
-          },
-          "capacity" : {
-            "type" : "integer"
-          },
-          "item" : {
-            "$ref" : "#/components/schemas/BookingResponse_booking_availability_item"
-          },
-          "customer_type_rates" : {
-            "$ref" : "#/components/schemas/BookingResponse_booking_availability_customer_type_rates"
+            "$ref" : "#/components/schemas/BookingResponseAvailability_customer_type_rates_customer_prototype"
           }
         }
       },
@@ -840,10 +874,10 @@
             "type" : "string"
           },
           "availability" : {
-            "$ref" : "#/components/schemas/BookingResponse_booking_availability"
+            "$ref" : "#/components/schemas/BookingResponseAvailability"
           },
           "contact" : {
-            "$ref" : "#/components/schemas/Booking_contact"
+            "$ref" : "#/components/schemas/Contact"
           },
           "customers" : {
             "type" : "array",
@@ -856,40 +890,6 @@
           },
           "order" : {
             "type" : "string"
-          }
-        }
-      },
-      "Customer_checkin_status" : {
-        "type" : "object",
-        "properties" : {
-          "name" : {
-            "type" : "string"
-          },
-          "type" : {
-            "type" : "string"
-          }
-        }
-      },
-      "Customer_customer_type_rate" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
-          },
-          "total" : {
-            "type" : "integer"
-          },
-          "capacity" : {
-            "type" : "integer"
-          },
-          "is_exclusive" : {
-            "type" : "boolean"
-          },
-          "customer_type" : {
-            "$ref" : "#/components/schemas/CustomerType"
-          },
-          "customer_prototype" : {
-            "$ref" : "#/components/schemas/CustomerBookingPrototype"
           }
         }
       }
