@@ -43,7 +43,7 @@
     },
     "/companies/{company-short-name}/items/" : {
       "get" : {
-        "summary" : "get company tours",
+        "summary" : "Get company tours",
         "description" : "The response provides the list of items that Meine Landausfluege can book for Sweden Walking Tours.",
         "operationId" : "getCompanyItems",
         "parameters" : [ {
@@ -74,7 +74,7 @@
     },
     "/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date/{date}/" : {
       "get" : {
-        "summary" : "get toura in date",
+        "summary" : "Get toura in date",
         "description" : "The response provides the list of bookable availabilities on 05August2020 for item 27550 (Sweden Walking Tours).A date that occurs in the future should be specified.",
         "operationId" : "getToursOnDate",
         "parameters" : [ {
@@ -125,7 +125,7 @@
     },
     "/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date-range/{start-date}/{end-date}/" : {
       "get" : {
-        "summary" : "get company tours by date range",
+        "summary" : "Get company tours by date range",
         "description" : "The response provides the list of bookable availabilities for 05August2020 through 07August2020 for item 27550 (Sweden Walking Tours). A date range that occurs in the future should be specified.",
         "operationId" : "getToursByDateRange",
         "parameters" : [ {
@@ -186,7 +186,7 @@
     },
     "/companies/{company-short-name}/availabilities/{availability-id}/" : {
       "get" : {
-        "summary" : "get availability tour",
+        "summary" : "Get availability tour",
         "description" : "The response provides details for availability 21198329 (Sweden Walking Tours).",
         "operationId" : "getDetailAvailabilityTour",
         "parameters" : [ {
@@ -228,7 +228,7 @@
     },
     "/companies/{company-short-name}/availabilities/{availability-id}/bookings/validate/" : {
       "post" : {
-        "summary" : "validate bookings",
+        "summary" : "Validate bookings",
         "description" : "Prior to creating a booking, the validate endpoint provides a means to validate a booking request.",
         "operationId" : "validateBookingTour",
         "parameters" : [ {
@@ -279,7 +279,7 @@
     },
     "/companies/{company-short-name}/availabilities/{availability-id}/bookings/" : {
       "post" : {
-        "summary" : "booking",
+        "summary" : "Booking tour",
         "description" : "create booking; isset(rebooking param) ? rebooking :booking",
         "operationId" : "bookingTour",
         "parameters" : [ {
@@ -330,7 +330,7 @@
     },
     "/companies/{company-short-name}/bookings/{booking-id}/" : {
       "get" : {
-        "summary" : "get booking details",
+        "summary" : "Get booking details",
         "description" : "Retrieve details for a specific booking",
         "operationId" : "getBookingDetail",
         "parameters" : [ {
@@ -716,10 +716,21 @@
             "type" : "integer"
           },
           "item" : {
-            "$ref" : "#/components/schemas/BookingResponseAvailability_item"
+            "$ref" : "#/components/schemas/BookingResponseAvailabilityItem"
           },
           "customer_type_rates" : {
-            "$ref" : "#/components/schemas/BookingResponseAvailability_customer_type_rates"
+            "$ref" : "#/components/schemas/CustomerTypeRateResponse"
+          }
+        }
+      },
+      "BookingResponseAvailabilityItem" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
           }
         }
       },
@@ -807,71 +818,6 @@
           },
           "total" : {
             "type" : "integer"
-          }
-        }
-      },
-      "BookingResponseAvailability_item" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
-          },
-          "name" : {
-            "type" : "string"
-          }
-        }
-      },
-      "BookingResponseAvailability_customer_type_rates_customer_type" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
-          },
-          "singular" : {
-            "type" : "string"
-          },
-          "plural" : {
-            "type" : "string"
-          },
-          "note" : {
-            "type" : "string"
-          }
-        }
-      },
-      "BookingResponseAvailability_customer_type_rates_customer_prototype" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
-          },
-          "display_name" : {
-            "type" : "string"
-          },
-          "total" : {
-            "type" : "integer"
-          }
-        }
-      },
-      "BookingResponseAvailability_customer_type_rates" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
-          },
-          "total" : {
-            "type" : "integer"
-          },
-          "capacity" : {
-            "type" : "integer"
-          },
-          "is_exclusive" : {
-            "type" : "boolean"
-          },
-          "customer_type" : {
-            "$ref" : "#/components/schemas/BookingResponseAvailability_customer_type_rates_customer_type"
-          },
-          "customer_prototype" : {
-            "$ref" : "#/components/schemas/BookingResponseAvailability_customer_type_rates_customer_prototype"
           }
         }
       },
