@@ -25,7 +25,8 @@
     "/companies/" : {
       "get" : {
         "summary" : "Get companies",
-        "description" : "Get companies list.",
+        "description" : "The response provides the list of partner companies that Meine Landausfluege has access to in FareHarbor.",
+        "operationId" : "getCompanies",
         "responses" : {
           "200" : {
             "description" : "OK",
@@ -43,6 +44,7 @@
     "/companies/{company-short-name}/items/" : {
       "get" : {
         "summary" : "get company tours",
+        "description" : "The response provides the list of items that Meine Landausfluege can book for Sweden Walking Tours.",
         "operationId" : "getCompanyItems",
         "parameters" : [ {
           "name" : "company-short-name",
@@ -73,6 +75,8 @@
     "/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date/{date}/" : {
       "get" : {
         "summary" : "get company tours",
+        "description" : "The response provides the list of bookable availabilities on 05August2020 for item 27550 (Sweden Walking Tours).A date that occurs in the future should be specified.",
+        "operationId" : "getToursOnDate",
         "parameters" : [ {
           "name" : "company-short-name",
           "in" : "path",
@@ -121,7 +125,9 @@
     },
     "/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date-range/{start-date}/{end-date}/" : {
       "get" : {
-        "summary" : "get company tours",
+        "summary" : "get company tours by date range",
+        "description" : "The response provides the list of bookable availabilities for 05August2020 through 07August2020 for item 27550 (Sweden Walking Tours). A date range that occurs in the future should be specified.",
+        "operationId" : "getToursByDateRange",
         "parameters" : [ {
           "name" : "company-short-name",
           "in" : "path",
@@ -181,6 +187,8 @@
     "/companies/{company-short-name}/availabilities/{availability-id}/" : {
       "get" : {
         "summary" : "get availability tour",
+        "description" : "The response provides details for availability 21198329 (Sweden Walking Tours).",
+        "operationId" : "getDetailAvailabilityTour",
         "parameters" : [ {
           "name" : "company-short-name",
           "in" : "path",
@@ -220,7 +228,9 @@
     },
     "/companies/{company-short-name}/availabilities/{availability-id}/bookings/validate/" : {
       "post" : {
-        "summary" : "check bookings",
+        "summary" : "validate bookings",
+        "description" : "Prior to creating a booking, the validate endpoint provides a means to validate a booking request.",
+        "operationId" : "validateBookingTour",
         "parameters" : [ {
           "name" : "company-short-name",
           "in" : "path",
@@ -270,7 +280,8 @@
     "/companies/{company-short-name}/availabilities/{availability-id}/bookings/" : {
       "post" : {
         "summary" : "booking",
-        "description" : "isset(rebooking param) ? rebooking :booking",
+        "description" : "create booking; isset(rebooking param) ? rebooking :booking",
+        "operationId" : "bookingTour",
         "parameters" : [ {
           "name" : "company-short-name",
           "in" : "path",
@@ -320,6 +331,8 @@
     "/companies/{company-short-name}/bookings/{booking-id}/" : {
       "get" : {
         "summary" : "get availability tour",
+        "description" : "dd",
+        "operationId" : "getBookingDetail",
         "parameters" : [ {
           "name" : "company-short-name",
           "in" : "path",
