@@ -74,7 +74,7 @@
     },
     "/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date/{date}/" : {
       "get" : {
-        "summary" : "Get toura in date",
+        "summary" : "Get tours for date",
         "description" : "The response provides the list of bookable availabilities on 05August2020 for item 27550 (Sweden Walking Tours).A date that occurs in the future should be specified.",
         "operationId" : "getToursOnDate",
         "parameters" : [ {
