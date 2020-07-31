@@ -1,0 +1,910 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "fareharbor API",
+    "description" : "This is a simple API",
+    "termsOfService" : "https://demo.fareharbor.com/api/external/v1/",
+    "contact" : {
+      "email" : "you@your-company.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://demo.fareharbor.com/api/external/v1/",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "security" : [ {
+    "apiApp" : [ "297a6594-f0e7-46ad-8955-3d3207beff30" ],
+    "apiUser" : [ "ba6c4210-ae80-4b11-b015-c414e6dbf4ae" ]
+  } ],
+  "paths" : {
+    "/companies/" : {
+      "get" : {
+        "summary" : "Get companies",
+        "description" : "Get companies list.",
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CompaniesList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{company-short-name}/items/" : {
+      "get" : {
+        "summary" : "get company tours",
+        "operationId" : "getCompanyItems",
+        "parameters" : [ {
+          "name" : "company-short-name",
+          "in" : "path",
+          "description" : "Company short name",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "elprado-eur"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ToursList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date/{date}/" : {
+      "get" : {
+        "summary" : "get company tours",
+        "parameters" : [ {
+          "name" : "company-short-name",
+          "in" : "path",
+          "description" : "Company short name",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "elprado-eur"
+        }, {
+          "name" : "tour-id",
+          "in" : "path",
+          "description" : "Tour id",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "date",
+          "in" : "path",
+          "description" : "Date",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AvailabilitiesList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date-range/{start-date}/{end-date}/" : {
+      "get" : {
+        "summary" : "get company tours",
+        "parameters" : [ {
+          "name" : "company-short-name",
+          "in" : "path",
+          "description" : "Company short name",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "elprado-eur"
+        }, {
+          "name" : "tour-id",
+          "in" : "path",
+          "description" : "Tour id",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "start-date",
+          "in" : "path",
+          "description" : "Date",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end-date",
+          "in" : "path",
+          "description" : "Date",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AvailabilitiesList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{company-short-name}/availabilities/{availability-id}/" : {
+      "get" : {
+        "summary" : "get availability tour",
+        "parameters" : [ {
+          "name" : "company-short-name",
+          "in" : "path",
+          "description" : "Company short name",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "elprado-eur"
+        }, {
+          "name" : "availability-id",
+          "in" : "path",
+          "description" : "Availability id",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          },
+          "example" : 21198329
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AvailabilitiesList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{company-short-name}/availabilities/{availability-id}/bookings/validate/" : {
+      "post" : {
+        "summary" : "check bookings",
+        "parameters" : [ {
+          "name" : "company-short-name",
+          "in" : "path",
+          "description" : "Company short name",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "elprado-eur"
+        }, {
+          "name" : "availability-id",
+          "in" : "path",
+          "description" : "Availability id",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          },
+          "example" : 21198329
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Booking"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BookingValidateResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{company-short-name}/availabilities/{availability-id}/bookings/" : {
+      "post" : {
+        "summary" : "booking",
+        "description" : "isset(rebooking param) ? rebooking :booking",
+        "parameters" : [ {
+          "name" : "company-short-name",
+          "in" : "path",
+          "description" : "Company short name",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "elprado-eur"
+        }, {
+          "name" : "availability-id",
+          "in" : "path",
+          "description" : "Availability id",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          },
+          "example" : 21198329
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Booking"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BookingResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{company-short-name}/bookings/{booking-id}/" : {
+      "get" : {
+        "summary" : "get availability tour",
+        "parameters" : [ {
+          "name" : "company-short-name",
+          "in" : "path",
+          "description" : "Company short name",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "elprado-eur"
+        }, {
+          "name" : "booking-id",
+          "in" : "path",
+          "description" : "Booking id",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "8df9a6bf-ee5d-4c59-91fd-affd9f33d0d1"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AvailabilitiesList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "get availability tour",
+        "parameters" : [ {
+          "name" : "company-short-name",
+          "in" : "path",
+          "description" : "Company short name",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "elprado-eur"
+        }, {
+          "name" : "booking-id",
+          "in" : "path",
+          "description" : "Booking id",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "8df9a6bf-ee5d-4c59-91fd-affd9f33d0d1"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AvailabilitiesList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Company" : {
+        "type" : "object",
+        "properties" : {
+          "currency" : {
+            "maxLength" : 3,
+            "type" : "string"
+          },
+          "shortname" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          }
+        },
+        "description" : "Company description"
+      },
+      "CompaniesList" : {
+        "type" : "object",
+        "properties" : {
+          "companies" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Company"
+            }
+          }
+        }
+      },
+      "TourImage" : {
+        "type" : "object",
+        "properties" : {
+          "image_cdn_url" : {
+            "type" : "string"
+          },
+          "pk" : {
+            "type" : "integer"
+          },
+          "gallery" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Location" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "note" : {
+            "type" : "string"
+          },
+          "note_safe_html" : {
+            "type" : "string"
+          },
+          "longitude" : {
+            "type" : "number",
+            "format" : "float"
+          },
+          "latitude" : {
+            "type" : "number",
+            "format" : "float"
+          },
+          "google_place_id" : {
+            "type" : "string"
+          },
+          "tripadvisor_url" : {
+            "type" : "string"
+          },
+          "address" : {
+            "$ref" : "#/components/schemas/Location_address"
+          }
+        }
+      },
+      "CustomerPrototype" : {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "pk" : {
+            "type" : "integer"
+          },
+          "total" : {
+            "type" : "integer"
+          },
+          "display_name" : {
+            "type" : "string"
+          },
+          "total_including_tax" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "Tour" : {
+        "type" : "object",
+        "properties" : {
+          "image_cdn_url" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "cancellation_policy" : {
+            "type" : "string"
+          },
+          "images" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/TourImage"
+            }
+          },
+          "description_bullets" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "locations" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Location"
+            }
+          },
+          "is_pickup_ever_available" : {
+            "type" : "boolean"
+          },
+          "headline" : {
+            "type" : "string"
+          },
+          "description_safe_html" : {
+            "type" : "string"
+          },
+          "location" : {
+            "type" : "string"
+          },
+          "booking_notes" : {
+            "type" : "string"
+          },
+          "pk" : {
+            "type" : "integer"
+          },
+          "description_text" : {
+            "type" : "string"
+          },
+          "customer_prototypes" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CustomerPrototype"
+            }
+          },
+          "tax_percentage" : {
+            "type" : "number",
+            "format" : "float"
+          },
+          "name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ToursList" : {
+        "type" : "object",
+        "properties" : {
+          "companies" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Tour"
+            }
+          }
+        }
+      },
+      "Availability" : {
+        "type" : "object",
+        "properties" : {
+          "start_at" : {
+            "type" : "string"
+          },
+          "capacity" : {
+            "type" : "integer"
+          },
+          "customer_type_rates" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CustomerPrototype"
+            }
+          },
+          "minimum_party_size" : {
+            "type" : "integer"
+          },
+          "end_at" : {
+            "type" : "string"
+          },
+          "maximum_party_size" : {
+            "type" : "integer"
+          },
+          "pk" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "AvailabilitiesList" : {
+        "type" : "object",
+        "properties" : {
+          "companies" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Availability"
+            }
+          }
+        }
+      },
+      "CustomerTypeRate" : {
+        "type" : "object",
+        "properties" : {
+          "customer_type_rate" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "Booking" : {
+        "type" : "object",
+        "properties" : {
+          "rebooking" : {
+            "type" : "string"
+          },
+          "voucher_number" : {
+            "type" : "string"
+          },
+          "contact" : {
+            "$ref" : "#/components/schemas/Booking_contact"
+          },
+          "customers" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CustomerTypeRate"
+            }
+          }
+        }
+      },
+      "BookingValidateResponse" : {
+        "type" : "object",
+        "properties" : {
+          "is_bookable" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "string"
+          },
+          "error" : {
+            "type" : "string"
+          }
+        }
+      },
+      "BookingResponse" : {
+        "type" : "object",
+        "properties" : {
+          "booking" : {
+            "$ref" : "#/components/schemas/BookingResponse_booking"
+          }
+        }
+      },
+      "Customer" : {
+        "type" : "object",
+        "properties" : {
+          "checkin_url" : {
+            "type" : "string"
+          },
+          "checkin_status" : {
+            "$ref" : "#/components/schemas/Customer_checkin_status"
+          },
+          "customer_type_rate" : {
+            "$ref" : "#/components/schemas/Customer_customer_type_rate"
+          }
+        }
+      },
+      "CustomerType" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "singular" : {
+            "type" : "string"
+          },
+          "plural" : {
+            "type" : "string"
+          },
+          "note" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CustomerBookingPrototype" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "display_name" : {
+            "type" : "string"
+          },
+          "total" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "Location_address" : {
+        "type" : "object",
+        "properties" : {
+          "city" : {
+            "type" : "string"
+          },
+          "country" : {
+            "type" : "string"
+          },
+          "postal_code" : {
+            "type" : "string"
+          },
+          "province" : {
+            "type" : "string"
+          },
+          "street" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Booking_contact" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "phone" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          }
+        }
+      },
+      "BookingResponse_booking_availability_item" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "BookingResponse_booking_availability_customer_type_rates_customer_type" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "singular" : {
+            "type" : "string"
+          },
+          "plural" : {
+            "type" : "string"
+          },
+          "note" : {
+            "type" : "string"
+          }
+        }
+      },
+      "BookingResponse_booking_availability_customer_type_rates_customer_prototype" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "display_name" : {
+            "type" : "string"
+          },
+          "total" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "BookingResponse_booking_availability_customer_type_rates" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "total" : {
+            "type" : "integer"
+          },
+          "capacity" : {
+            "type" : "integer"
+          },
+          "is_exclusive" : {
+            "type" : "boolean"
+          },
+          "customer_type" : {
+            "$ref" : "#/components/schemas/BookingResponse_booking_availability_customer_type_rates_customer_type"
+          },
+          "customer_prototype" : {
+            "$ref" : "#/components/schemas/BookingResponse_booking_availability_customer_type_rates_customer_prototype"
+          }
+        }
+      },
+      "BookingResponse_booking_availability" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "start_at" : {
+            "type" : "string"
+          },
+          "end_at" : {
+            "type" : "string"
+          },
+          "capacity" : {
+            "type" : "integer"
+          },
+          "item" : {
+            "$ref" : "#/components/schemas/BookingResponse_booking_availability_item"
+          },
+          "customer_type_rates" : {
+            "$ref" : "#/components/schemas/BookingResponse_booking_availability_customer_type_rates"
+          }
+        }
+      },
+      "BookingResponse_booking" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "uuid" : {
+            "type" : "string"
+          },
+          "status" : {
+            "type" : "string"
+          },
+          "availability" : {
+            "$ref" : "#/components/schemas/BookingResponse_booking_availability"
+          },
+          "contact" : {
+            "$ref" : "#/components/schemas/Booking_contact"
+          },
+          "customers" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Customer"
+            }
+          },
+          "invoice_price" : {
+            "type" : "integer"
+          },
+          "order" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Customer_checkin_status" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "type" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Customer_customer_type_rate" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "total" : {
+            "type" : "integer"
+          },
+          "capacity" : {
+            "type" : "integer"
+          },
+          "is_exclusive" : {
+            "type" : "boolean"
+          },
+          "customer_type" : {
+            "$ref" : "#/components/schemas/CustomerType"
+          },
+          "customer_prototype" : {
+            "$ref" : "#/components/schemas/CustomerBookingPrototype"
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "apiApp" : {
+        "type" : "apiKey",
+        "name" : "X-FareHarbor-API-App",
+        "in" : "header"
+      },
+      "apiUser" : {
+        "type" : "apiKey",
+        "name" : "X-FareHarbor-API-User",
+        "in" : "header"
+      }
+    }
+  }
+}
