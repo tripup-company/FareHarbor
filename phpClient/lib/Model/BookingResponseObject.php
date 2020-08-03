@@ -1,6 +1,6 @@
 <?php
 /**
- * BookingResponse
+ * BookingResponseObject
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * BookingResponse Class Doc Comment
+ * BookingResponseObject Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BookingResponse implements ModelInterface, ArrayAccess
+class BookingResponseObject implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class BookingResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BookingResponse';
+    protected static $swaggerModelName = 'BookingResponseObject';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,14 @@ class BookingResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'booking' => '\Swagger\Client\Model\BookingResponseObject'    ];
+        'pk' => 'int',
+'uuid' => 'string',
+'status' => 'string',
+'availability' => '\Swagger\Client\Model\BookingResponseAvailability',
+'contact' => '\Swagger\Client\Model\Contact',
+'customers' => '\Swagger\Client\Model\Customer[]',
+'invoice_price' => 'int',
+'order' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +71,14 @@ class BookingResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'booking' => null    ];
+        'pk' => null,
+'uuid' => null,
+'status' => null,
+'availability' => null,
+'contact' => null,
+'customers' => null,
+'invoice_price' => null,
+'order' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +107,14 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'booking' => 'booking'    ];
+        'pk' => 'pk',
+'uuid' => 'uuid',
+'status' => 'status',
+'availability' => 'availability',
+'contact' => 'contact',
+'customers' => 'customers',
+'invoice_price' => 'invoice_price',
+'order' => 'order'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +122,14 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'booking' => 'setBooking'    ];
+        'pk' => 'setPk',
+'uuid' => 'setUuid',
+'status' => 'setStatus',
+'availability' => 'setAvailability',
+'contact' => 'setContact',
+'customers' => 'setCustomers',
+'invoice_price' => 'setInvoicePrice',
+'order' => 'setOrder'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +137,14 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'booking' => 'getBooking'    ];
+        'pk' => 'getPk',
+'uuid' => 'getUuid',
+'status' => 'getStatus',
+'availability' => 'getAvailability',
+'contact' => 'getContact',
+'customers' => 'getCustomers',
+'invoice_price' => 'getInvoicePrice',
+'order' => 'getOrder'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +204,14 @@ class BookingResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['booking'] = isset($data['booking']) ? $data['booking'] : null;
+        $this->container['pk'] = isset($data['pk']) ? $data['pk'] : null;
+        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['availability'] = isset($data['availability']) ? $data['availability'] : null;
+        $this->container['contact'] = isset($data['contact']) ? $data['contact'] : null;
+        $this->container['customers'] = isset($data['customers']) ? $data['customers'] : null;
+        $this->container['invoice_price'] = isset($data['invoice_price']) ? $data['invoice_price'] : null;
+        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
     }
 
     /**
@@ -197,25 +239,193 @@ class BookingResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets booking
+     * Gets pk
      *
-     * @return \Swagger\Client\Model\BookingResponseObject
+     * @return int
      */
-    public function getBooking()
+    public function getPk()
     {
-        return $this->container['booking'];
+        return $this->container['pk'];
     }
 
     /**
-     * Sets booking
+     * Sets pk
      *
-     * @param \Swagger\Client\Model\BookingResponseObject $booking booking
+     * @param int $pk pk
      *
      * @return $this
      */
-    public function setBooking($booking)
+    public function setPk($pk)
     {
-        $this->container['booking'] = $booking;
+        $this->container['pk'] = $pk;
+
+        return $this;
+    }
+
+    /**
+     * Gets uuid
+     *
+     * @return string
+     */
+    public function getUuid()
+    {
+        return $this->container['uuid'];
+    }
+
+    /**
+     * Sets uuid
+     *
+     * @param string $uuid uuid
+     *
+     * @return $this
+     */
+    public function setUuid($uuid)
+    {
+        $this->container['uuid'] = $uuid;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets availability
+     *
+     * @return \Swagger\Client\Model\BookingResponseAvailability
+     */
+    public function getAvailability()
+    {
+        return $this->container['availability'];
+    }
+
+    /**
+     * Sets availability
+     *
+     * @param \Swagger\Client\Model\BookingResponseAvailability $availability availability
+     *
+     * @return $this
+     */
+    public function setAvailability($availability)
+    {
+        $this->container['availability'] = $availability;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact
+     *
+     * @return \Swagger\Client\Model\Contact
+     */
+    public function getContact()
+    {
+        return $this->container['contact'];
+    }
+
+    /**
+     * Sets contact
+     *
+     * @param \Swagger\Client\Model\Contact $contact contact
+     *
+     * @return $this
+     */
+    public function setContact($contact)
+    {
+        $this->container['contact'] = $contact;
+
+        return $this;
+    }
+
+    /**
+     * Gets customers
+     *
+     * @return \Swagger\Client\Model\Customer[]
+     */
+    public function getCustomers()
+    {
+        return $this->container['customers'];
+    }
+
+    /**
+     * Sets customers
+     *
+     * @param \Swagger\Client\Model\Customer[] $customers customers
+     *
+     * @return $this
+     */
+    public function setCustomers($customers)
+    {
+        $this->container['customers'] = $customers;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoice_price
+     *
+     * @return int
+     */
+    public function getInvoicePrice()
+    {
+        return $this->container['invoice_price'];
+    }
+
+    /**
+     * Sets invoice_price
+     *
+     * @param int $invoice_price invoice_price
+     *
+     * @return $this
+     */
+    public function setInvoicePrice($invoice_price)
+    {
+        $this->container['invoice_price'] = $invoice_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets order
+     *
+     * @return string
+     */
+    public function getOrder()
+    {
+        return $this->container['order'];
+    }
+
+    /**
+     * Sets order
+     *
+     * @param string $order order
+     *
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->container['order'] = $order;
 
         return $this;
     }

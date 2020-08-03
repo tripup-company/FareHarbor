@@ -71,39 +71,19 @@ class DefaultApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPost
+     * Test case for bookingTour
      *
-     * booking.
-     *
-     */
-    public function testCompaniesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPost()
-    {
-    }
-
-    /**
-     * Test case for companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePost
-     *
-     * check bookings.
+     * Booking tour.
      *
      */
-    public function testCompaniesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePost()
-    {
-    }
-
-    /**
-     * Test case for companiesCompanyShortNameAvailabilitiesAvailabilityIdGet
-     *
-     * get availability tour.
-     *
-     */
-    public function testCompaniesCompanyShortNameAvailabilitiesAvailabilityIdGet()
+    public function testBookingTour()
     {
     }
 
     /**
      * Test case for companiesCompanyShortNameBookingsBookingIdDelete
      *
-     * get availability tour.
+     * Cancel a booking.
      *
      */
     public function testCompaniesCompanyShortNameBookingsBookingIdDelete()
@@ -111,52 +91,72 @@ class DefaultApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for companiesCompanyShortNameBookingsBookingIdGet
+     * Test case for getBookingDetail
      *
-     * get availability tour.
+     * Get booking details.
      *
      */
-    public function testCompaniesCompanyShortNameBookingsBookingIdGet()
+    public function testGetBookingDetail()
     {
     }
 
     /**
-     * Test case for companiesCompanyShortNameItemsGet
-     *
-     * get company tours.
-     *
-     */
-    public function testCompaniesCompanyShortNameItemsGet()
-    {
-    }
-
-    /**
-     * Test case for companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGet
-     *
-     * get company tours.
-     *
-     */
-    public function testCompaniesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGet()
-    {
-    }
-
-    /**
-     * Test case for companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGet
-     *
-     * get company tours.
-     *
-     */
-    public function testCompaniesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGet()
-    {
-    }
-
-    /**
-     * Test case for companiesGet
+     * Test case for getCompanies
      *
      * Get companies.
      *
      */
-    public function testCompaniesGet()
+    public function testGetCompanies()
+    {
+    }
+
+    /**
+     * Test case for getCompanyItems
+     *
+     * Get company tours.
+     *
+     */
+    public function testGetCompanyItems()
+    {
+    }
+
+    /**
+     * Test case for getDetailAvailabilityTour
+     *
+     * Get availability tour.
+     *
+     */
+    public function testGetDetailAvailabilityTour()
+    {
+    }
+
+    /**
+     * Test case for getToursByDateRange
+     *
+     * Get company tours by date range.
+     *
+     */
+    public function testGetToursByDateRange()
+    {
+    }
+
+    /**
+     * Test case for getToursOnDate
+     *
+     * Get tours for date.
+     *
+     */
+    public function testGetToursOnDate()
+    {
+    }
+
+    /**
+     * Test case for validateBookingTour
+     *
+     * Validate bookings.
+     *
+     */
+    public function testValidateBookingTour()
     {
     }
 }

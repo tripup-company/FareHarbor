@@ -58,7 +58,7 @@ class Booking implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'rebooking' => 'string',
 'voucher_number' => 'string',
-'contact' => '\Swagger\Client\Model\BookingContact',
+'contact' => '\Swagger\Client\Model\Contact',
 'customers' => '\Swagger\Client\Model\CustomerTypeRate[]'    ];
 
     /**
@@ -265,7 +265,7 @@ class Booking implements ModelInterface, ArrayAccess
     /**
      * Gets contact
      *
-     * @return \Swagger\Client\Model\BookingContact
+     * @return \Swagger\Client\Model\Contact
      */
     public function getContact()
     {
@@ -275,7 +275,7 @@ class Booking implements ModelInterface, ArrayAccess
     /**
      * Sets contact
      *
-     * @param \Swagger\Client\Model\BookingContact $contact contact
+     * @param \Swagger\Client\Model\Contact $contact contact
      *
      * @return $this
      */

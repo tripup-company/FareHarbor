@@ -87,9 +87,9 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPost
+     * Operation bookingTour
      *
-     * booking
+     * Booking tour
      *
      * @param  string $company_short_name Company short name (required)
      * @param  int $availability_id Availability id (required)
@@ -99,16 +99,16 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\BookingResponse
      */
-    public function companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPost($company_short_name, $availability_id, $body = null)
+    public function bookingTour($company_short_name, $availability_id, $body = null)
     {
-        list($response) = $this->companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPostWithHttpInfo($company_short_name, $availability_id, $body);
+        list($response) = $this->bookingTourWithHttpInfo($company_short_name, $availability_id, $body);
         return $response;
     }
 
     /**
-     * Operation companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPostWithHttpInfo
+     * Operation bookingTourWithHttpInfo
      *
-     * booking
+     * Booking tour
      *
      * @param  string $company_short_name Company short name (required)
      * @param  int $availability_id Availability id (required)
@@ -118,10 +118,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\BookingResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPostWithHttpInfo($company_short_name, $availability_id, $body = null)
+    public function bookingTourWithHttpInfo($company_short_name, $availability_id, $body = null)
     {
         $returnType = '\Swagger\Client\Model\BookingResponse';
-        $request = $this->companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPostRequest($company_short_name, $availability_id, $body);
+        $request = $this->bookingTourRequest($company_short_name, $availability_id, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -183,9 +183,9 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPostAsync
+     * Operation bookingTourAsync
      *
-     * booking
+     * Booking tour
      *
      * @param  string $company_short_name Company short name (required)
      * @param  int $availability_id Availability id (required)
@@ -194,9 +194,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPostAsync($company_short_name, $availability_id, $body = null)
+    public function bookingTourAsync($company_short_name, $availability_id, $body = null)
     {
-        return $this->companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPostAsyncWithHttpInfo($company_short_name, $availability_id, $body)
+        return $this->bookingTourAsyncWithHttpInfo($company_short_name, $availability_id, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -205,9 +205,9 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPostAsyncWithHttpInfo
+     * Operation bookingTourAsyncWithHttpInfo
      *
-     * booking
+     * Booking tour
      *
      * @param  string $company_short_name Company short name (required)
      * @param  int $availability_id Availability id (required)
@@ -216,10 +216,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPostAsyncWithHttpInfo($company_short_name, $availability_id, $body = null)
+    public function bookingTourAsyncWithHttpInfo($company_short_name, $availability_id, $body = null)
     {
         $returnType = '\Swagger\Client\Model\BookingResponse';
-        $request = $this->companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPostRequest($company_short_name, $availability_id, $body);
+        $request = $this->bookingTourRequest($company_short_name, $availability_id, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -259,7 +259,7 @@ class DefaultApi
     }
 
     /**
-     * Create request for operation 'companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPost'
+     * Create request for operation 'bookingTour'
      *
      * @param  string $company_short_name Company short name (required)
      * @param  int $availability_id Availability id (required)
@@ -268,18 +268,18 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPostRequest($company_short_name, $availability_id, $body = null)
+    protected function bookingTourRequest($company_short_name, $availability_id, $body = null)
     {
         // verify the required parameter 'company_short_name' is set
         if ($company_short_name === null || (is_array($company_short_name) && count($company_short_name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $company_short_name when calling companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPost'
+                'Missing the required parameter $company_short_name when calling bookingTour'
             );
         }
         // verify the required parameter 'availability_id' is set
         if ($availability_id === null || (is_array($availability_id) && count($availability_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $availability_id when calling companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPost'
+                'Missing the required parameter $availability_id when calling bookingTour'
             );
         }
 
@@ -386,599 +386,9 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePost
-     *
-     * check bookings
-     *
-     * @param  string $company_short_name Company short name (required)
-     * @param  int $availability_id Availability id (required)
-     * @param  \Swagger\Client\Model\Booking $body body (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\BookingValidateResponse
-     */
-    public function companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePost($company_short_name, $availability_id, $body = null)
-    {
-        list($response) = $this->companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePostWithHttpInfo($company_short_name, $availability_id, $body);
-        return $response;
-    }
-
-    /**
-     * Operation companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePostWithHttpInfo
-     *
-     * check bookings
-     *
-     * @param  string $company_short_name Company short name (required)
-     * @param  int $availability_id Availability id (required)
-     * @param  \Swagger\Client\Model\Booking $body (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\BookingValidateResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePostWithHttpInfo($company_short_name, $availability_id, $body = null)
-    {
-        $returnType = '\Swagger\Client\Model\BookingValidateResponse';
-        $request = $this->companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePostRequest($company_short_name, $availability_id, $body);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\BookingValidateResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePostAsync
-     *
-     * check bookings
-     *
-     * @param  string $company_short_name Company short name (required)
-     * @param  int $availability_id Availability id (required)
-     * @param  \Swagger\Client\Model\Booking $body (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePostAsync($company_short_name, $availability_id, $body = null)
-    {
-        return $this->companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePostAsyncWithHttpInfo($company_short_name, $availability_id, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePostAsyncWithHttpInfo
-     *
-     * check bookings
-     *
-     * @param  string $company_short_name Company short name (required)
-     * @param  int $availability_id Availability id (required)
-     * @param  \Swagger\Client\Model\Booking $body (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePostAsyncWithHttpInfo($company_short_name, $availability_id, $body = null)
-    {
-        $returnType = '\Swagger\Client\Model\BookingValidateResponse';
-        $request = $this->companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePostRequest($company_short_name, $availability_id, $body);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePost'
-     *
-     * @param  string $company_short_name Company short name (required)
-     * @param  int $availability_id Availability id (required)
-     * @param  \Swagger\Client\Model\Booking $body (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePostRequest($company_short_name, $availability_id, $body = null)
-    {
-        // verify the required parameter 'company_short_name' is set
-        if ($company_short_name === null || (is_array($company_short_name) && count($company_short_name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $company_short_name when calling companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePost'
-            );
-        }
-        // verify the required parameter 'availability_id' is set
-        if ($availability_id === null || (is_array($availability_id) && count($availability_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $availability_id when calling companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePost'
-            );
-        }
-
-        $resourcePath = '/companies/{company-short-name}/availabilities/{availability-id}/bookings/validate/';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($company_short_name !== null) {
-            $resourcePath = str_replace(
-                '{' . 'company-short-name' . '}',
-                ObjectSerializer::toPathValue($company_short_name),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($availability_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'availability-id' . '}',
-                ObjectSerializer::toPathValue($availability_id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['text/plain']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['text/plain'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-FareHarbor-API-App');
-        if ($apiKey !== null) {
-            $headers['X-FareHarbor-API-App'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-FareHarbor-API-User');
-        if ($apiKey !== null) {
-            $headers['X-FareHarbor-API-User'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation companiesCompanyShortNameAvailabilitiesAvailabilityIdGet
-     *
-     * get availability tour
-     *
-     * @param  string $company_short_name Company short name (required)
-     * @param  int $availability_id Availability id (required)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\AvailabilitiesList
-     */
-    public function companiesCompanyShortNameAvailabilitiesAvailabilityIdGet($company_short_name, $availability_id)
-    {
-        list($response) = $this->companiesCompanyShortNameAvailabilitiesAvailabilityIdGetWithHttpInfo($company_short_name, $availability_id);
-        return $response;
-    }
-
-    /**
-     * Operation companiesCompanyShortNameAvailabilitiesAvailabilityIdGetWithHttpInfo
-     *
-     * get availability tour
-     *
-     * @param  string $company_short_name Company short name (required)
-     * @param  int $availability_id Availability id (required)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\AvailabilitiesList, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function companiesCompanyShortNameAvailabilitiesAvailabilityIdGetWithHttpInfo($company_short_name, $availability_id)
-    {
-        $returnType = '\Swagger\Client\Model\AvailabilitiesList';
-        $request = $this->companiesCompanyShortNameAvailabilitiesAvailabilityIdGetRequest($company_short_name, $availability_id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\AvailabilitiesList',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation companiesCompanyShortNameAvailabilitiesAvailabilityIdGetAsync
-     *
-     * get availability tour
-     *
-     * @param  string $company_short_name Company short name (required)
-     * @param  int $availability_id Availability id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function companiesCompanyShortNameAvailabilitiesAvailabilityIdGetAsync($company_short_name, $availability_id)
-    {
-        return $this->companiesCompanyShortNameAvailabilitiesAvailabilityIdGetAsyncWithHttpInfo($company_short_name, $availability_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation companiesCompanyShortNameAvailabilitiesAvailabilityIdGetAsyncWithHttpInfo
-     *
-     * get availability tour
-     *
-     * @param  string $company_short_name Company short name (required)
-     * @param  int $availability_id Availability id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function companiesCompanyShortNameAvailabilitiesAvailabilityIdGetAsyncWithHttpInfo($company_short_name, $availability_id)
-    {
-        $returnType = '\Swagger\Client\Model\AvailabilitiesList';
-        $request = $this->companiesCompanyShortNameAvailabilitiesAvailabilityIdGetRequest($company_short_name, $availability_id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'companiesCompanyShortNameAvailabilitiesAvailabilityIdGet'
-     *
-     * @param  string $company_short_name Company short name (required)
-     * @param  int $availability_id Availability id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function companiesCompanyShortNameAvailabilitiesAvailabilityIdGetRequest($company_short_name, $availability_id)
-    {
-        // verify the required parameter 'company_short_name' is set
-        if ($company_short_name === null || (is_array($company_short_name) && count($company_short_name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $company_short_name when calling companiesCompanyShortNameAvailabilitiesAvailabilityIdGet'
-            );
-        }
-        // verify the required parameter 'availability_id' is set
-        if ($availability_id === null || (is_array($availability_id) && count($availability_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $availability_id when calling companiesCompanyShortNameAvailabilitiesAvailabilityIdGet'
-            );
-        }
-
-        $resourcePath = '/companies/{company-short-name}/availabilities/{availability-id}/';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($company_short_name !== null) {
-            $resourcePath = str_replace(
-                '{' . 'company-short-name' . '}',
-                ObjectSerializer::toPathValue($company_short_name),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($availability_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'availability-id' . '}',
-                ObjectSerializer::toPathValue($availability_id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['text/plain']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['text/plain'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-FareHarbor-API-App');
-        if ($apiKey !== null) {
-            $headers['X-FareHarbor-API-App'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-FareHarbor-API-User');
-        if ($apiKey !== null) {
-            $headers['X-FareHarbor-API-User'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation companiesCompanyShortNameBookingsBookingIdDelete
      *
-     * get availability tour
+     * Cancel a booking
      *
      * @param  string $company_short_name Company short name (required)
      * @param  string $booking_id Booking id (required)
@@ -996,7 +406,7 @@ class DefaultApi
     /**
      * Operation companiesCompanyShortNameBookingsBookingIdDeleteWithHttpInfo
      *
-     * get availability tour
+     * Cancel a booking
      *
      * @param  string $company_short_name Company short name (required)
      * @param  string $booking_id Booking id (required)
@@ -1072,7 +482,7 @@ class DefaultApi
     /**
      * Operation companiesCompanyShortNameBookingsBookingIdDeleteAsync
      *
-     * get availability tour
+     * Cancel a booking
      *
      * @param  string $company_short_name Company short name (required)
      * @param  string $booking_id Booking id (required)
@@ -1093,7 +503,7 @@ class DefaultApi
     /**
      * Operation companiesCompanyShortNameBookingsBookingIdDeleteAsyncWithHttpInfo
      *
-     * get availability tour
+     * Cancel a booking
      *
      * @param  string $company_short_name Company short name (required)
      * @param  string $booking_id Booking id (required)
@@ -1267,9 +677,9 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameBookingsBookingIdGet
+     * Operation getBookingDetail
      *
-     * get availability tour
+     * Get booking details
      *
      * @param  string $company_short_name Company short name (required)
      * @param  string $booking_id Booking id (required)
@@ -1278,16 +688,16 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\AvailabilitiesList
      */
-    public function companiesCompanyShortNameBookingsBookingIdGet($company_short_name, $booking_id)
+    public function getBookingDetail($company_short_name, $booking_id)
     {
-        list($response) = $this->companiesCompanyShortNameBookingsBookingIdGetWithHttpInfo($company_short_name, $booking_id);
+        list($response) = $this->getBookingDetailWithHttpInfo($company_short_name, $booking_id);
         return $response;
     }
 
     /**
-     * Operation companiesCompanyShortNameBookingsBookingIdGetWithHttpInfo
+     * Operation getBookingDetailWithHttpInfo
      *
-     * get availability tour
+     * Get booking details
      *
      * @param  string $company_short_name Company short name (required)
      * @param  string $booking_id Booking id (required)
@@ -1296,10 +706,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\AvailabilitiesList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function companiesCompanyShortNameBookingsBookingIdGetWithHttpInfo($company_short_name, $booking_id)
+    public function getBookingDetailWithHttpInfo($company_short_name, $booking_id)
     {
         $returnType = '\Swagger\Client\Model\AvailabilitiesList';
-        $request = $this->companiesCompanyShortNameBookingsBookingIdGetRequest($company_short_name, $booking_id);
+        $request = $this->getBookingDetailRequest($company_short_name, $booking_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1361,9 +771,9 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameBookingsBookingIdGetAsync
+     * Operation getBookingDetailAsync
      *
-     * get availability tour
+     * Get booking details
      *
      * @param  string $company_short_name Company short name (required)
      * @param  string $booking_id Booking id (required)
@@ -1371,9 +781,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function companiesCompanyShortNameBookingsBookingIdGetAsync($company_short_name, $booking_id)
+    public function getBookingDetailAsync($company_short_name, $booking_id)
     {
-        return $this->companiesCompanyShortNameBookingsBookingIdGetAsyncWithHttpInfo($company_short_name, $booking_id)
+        return $this->getBookingDetailAsyncWithHttpInfo($company_short_name, $booking_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1382,9 +792,9 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameBookingsBookingIdGetAsyncWithHttpInfo
+     * Operation getBookingDetailAsyncWithHttpInfo
      *
-     * get availability tour
+     * Get booking details
      *
      * @param  string $company_short_name Company short name (required)
      * @param  string $booking_id Booking id (required)
@@ -1392,10 +802,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function companiesCompanyShortNameBookingsBookingIdGetAsyncWithHttpInfo($company_short_name, $booking_id)
+    public function getBookingDetailAsyncWithHttpInfo($company_short_name, $booking_id)
     {
         $returnType = '\Swagger\Client\Model\AvailabilitiesList';
-        $request = $this->companiesCompanyShortNameBookingsBookingIdGetRequest($company_short_name, $booking_id);
+        $request = $this->getBookingDetailRequest($company_short_name, $booking_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1435,7 +845,7 @@ class DefaultApi
     }
 
     /**
-     * Create request for operation 'companiesCompanyShortNameBookingsBookingIdGet'
+     * Create request for operation 'getBookingDetail'
      *
      * @param  string $company_short_name Company short name (required)
      * @param  string $booking_id Booking id (required)
@@ -1443,18 +853,18 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function companiesCompanyShortNameBookingsBookingIdGetRequest($company_short_name, $booking_id)
+    protected function getBookingDetailRequest($company_short_name, $booking_id)
     {
         // verify the required parameter 'company_short_name' is set
         if ($company_short_name === null || (is_array($company_short_name) && count($company_short_name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $company_short_name when calling companiesCompanyShortNameBookingsBookingIdGet'
+                'Missing the required parameter $company_short_name when calling getBookingDetail'
             );
         }
         // verify the required parameter 'booking_id' is set
         if ($booking_id === null || (is_array($booking_id) && count($booking_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $booking_id when calling companiesCompanyShortNameBookingsBookingIdGet'
+                'Missing the required parameter $booking_id when calling getBookingDetail'
             );
         }
 
@@ -1558,9 +968,262 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameItemsGet
+     * Operation getCompanies
      *
-     * get company tours
+     * Get companies
+     *
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\CompaniesList
+     */
+    public function getCompanies()
+    {
+        list($response) = $this->getCompaniesWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation getCompaniesWithHttpInfo
+     *
+     * Get companies
+     *
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\CompaniesList, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCompaniesWithHttpInfo()
+    {
+        $returnType = '\Swagger\Client\Model\CompaniesList';
+        $request = $this->getCompaniesRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\CompaniesList',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCompaniesAsync
+     *
+     * Get companies
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCompaniesAsync()
+    {
+        return $this->getCompaniesAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCompaniesAsyncWithHttpInfo
+     *
+     * Get companies
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCompaniesAsyncWithHttpInfo()
+    {
+        $returnType = '\Swagger\Client\Model\CompaniesList';
+        $request = $this->getCompaniesRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCompanies'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getCompaniesRequest()
+    {
+
+        $resourcePath = '/companies/';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['text/plain']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['text/plain'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-FareHarbor-API-App');
+        if ($apiKey !== null) {
+            $headers['X-FareHarbor-API-App'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-FareHarbor-API-User');
+        if ($apiKey !== null) {
+            $headers['X-FareHarbor-API-User'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getCompanyItems
+     *
+     * Get company tours
      *
      * @param  string $company_short_name Company short name (required)
      *
@@ -1568,16 +1231,16 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\ToursList
      */
-    public function companiesCompanyShortNameItemsGet($company_short_name)
+    public function getCompanyItems($company_short_name)
     {
-        list($response) = $this->companiesCompanyShortNameItemsGetWithHttpInfo($company_short_name);
+        list($response) = $this->getCompanyItemsWithHttpInfo($company_short_name);
         return $response;
     }
 
     /**
-     * Operation companiesCompanyShortNameItemsGetWithHttpInfo
+     * Operation getCompanyItemsWithHttpInfo
      *
-     * get company tours
+     * Get company tours
      *
      * @param  string $company_short_name Company short name (required)
      *
@@ -1585,10 +1248,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\ToursList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function companiesCompanyShortNameItemsGetWithHttpInfo($company_short_name)
+    public function getCompanyItemsWithHttpInfo($company_short_name)
     {
         $returnType = '\Swagger\Client\Model\ToursList';
-        $request = $this->companiesCompanyShortNameItemsGetRequest($company_short_name);
+        $request = $this->getCompanyItemsRequest($company_short_name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1650,18 +1313,18 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameItemsGetAsync
+     * Operation getCompanyItemsAsync
      *
-     * get company tours
+     * Get company tours
      *
      * @param  string $company_short_name Company short name (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function companiesCompanyShortNameItemsGetAsync($company_short_name)
+    public function getCompanyItemsAsync($company_short_name)
     {
-        return $this->companiesCompanyShortNameItemsGetAsyncWithHttpInfo($company_short_name)
+        return $this->getCompanyItemsAsyncWithHttpInfo($company_short_name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1670,19 +1333,19 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameItemsGetAsyncWithHttpInfo
+     * Operation getCompanyItemsAsyncWithHttpInfo
      *
-     * get company tours
+     * Get company tours
      *
      * @param  string $company_short_name Company short name (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function companiesCompanyShortNameItemsGetAsyncWithHttpInfo($company_short_name)
+    public function getCompanyItemsAsyncWithHttpInfo($company_short_name)
     {
         $returnType = '\Swagger\Client\Model\ToursList';
-        $request = $this->companiesCompanyShortNameItemsGetRequest($company_short_name);
+        $request = $this->getCompanyItemsRequest($company_short_name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1722,19 +1385,19 @@ class DefaultApi
     }
 
     /**
-     * Create request for operation 'companiesCompanyShortNameItemsGet'
+     * Create request for operation 'getCompanyItems'
      *
      * @param  string $company_short_name Company short name (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function companiesCompanyShortNameItemsGetRequest($company_short_name)
+    protected function getCompanyItemsRequest($company_short_name)
     {
         // verify the required parameter 'company_short_name' is set
         if ($company_short_name === null || (is_array($company_short_name) && count($company_short_name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $company_short_name when calling companiesCompanyShortNameItemsGet'
+                'Missing the required parameter $company_short_name when calling getCompanyItems'
             );
         }
 
@@ -1830,41 +1493,39 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGet
+     * Operation getDetailAvailabilityTour
      *
-     * get company tours
+     * Get availability tour
      *
      * @param  string $company_short_name Company short name (required)
-     * @param  int $tour_id Tour id (required)
-     * @param  string $date Date (required)
+     * @param  int $availability_id Availability id (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\AvailabilitiesList
      */
-    public function companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGet($company_short_name, $tour_id, $date)
+    public function getDetailAvailabilityTour($company_short_name, $availability_id)
     {
-        list($response) = $this->companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGetWithHttpInfo($company_short_name, $tour_id, $date);
+        list($response) = $this->getDetailAvailabilityTourWithHttpInfo($company_short_name, $availability_id);
         return $response;
     }
 
     /**
-     * Operation companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGetWithHttpInfo
+     * Operation getDetailAvailabilityTourWithHttpInfo
      *
-     * get company tours
+     * Get availability tour
      *
      * @param  string $company_short_name Company short name (required)
-     * @param  int $tour_id Tour id (required)
-     * @param  string $date Date (required)
+     * @param  int $availability_id Availability id (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\AvailabilitiesList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGetWithHttpInfo($company_short_name, $tour_id, $date)
+    public function getDetailAvailabilityTourWithHttpInfo($company_short_name, $availability_id)
     {
         $returnType = '\Swagger\Client\Model\AvailabilitiesList';
-        $request = $this->companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGetRequest($company_short_name, $tour_id, $date);
+        $request = $this->getDetailAvailabilityTourRequest($company_short_name, $availability_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1926,20 +1587,19 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGetAsync
+     * Operation getDetailAvailabilityTourAsync
      *
-     * get company tours
+     * Get availability tour
      *
      * @param  string $company_short_name Company short name (required)
-     * @param  int $tour_id Tour id (required)
-     * @param  string $date Date (required)
+     * @param  int $availability_id Availability id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGetAsync($company_short_name, $tour_id, $date)
+    public function getDetailAvailabilityTourAsync($company_short_name, $availability_id)
     {
-        return $this->companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGetAsyncWithHttpInfo($company_short_name, $tour_id, $date)
+        return $this->getDetailAvailabilityTourAsyncWithHttpInfo($company_short_name, $availability_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1948,21 +1608,20 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGetAsyncWithHttpInfo
+     * Operation getDetailAvailabilityTourAsyncWithHttpInfo
      *
-     * get company tours
+     * Get availability tour
      *
      * @param  string $company_short_name Company short name (required)
-     * @param  int $tour_id Tour id (required)
-     * @param  string $date Date (required)
+     * @param  int $availability_id Availability id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGetAsyncWithHttpInfo($company_short_name, $tour_id, $date)
+    public function getDetailAvailabilityTourAsyncWithHttpInfo($company_short_name, $availability_id)
     {
         $returnType = '\Swagger\Client\Model\AvailabilitiesList';
-        $request = $this->companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGetRequest($company_short_name, $tour_id, $date);
+        $request = $this->getDetailAvailabilityTourRequest($company_short_name, $availability_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2002,37 +1661,30 @@ class DefaultApi
     }
 
     /**
-     * Create request for operation 'companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGet'
+     * Create request for operation 'getDetailAvailabilityTour'
      *
      * @param  string $company_short_name Company short name (required)
-     * @param  int $tour_id Tour id (required)
-     * @param  string $date Date (required)
+     * @param  int $availability_id Availability id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGetRequest($company_short_name, $tour_id, $date)
+    protected function getDetailAvailabilityTourRequest($company_short_name, $availability_id)
     {
         // verify the required parameter 'company_short_name' is set
         if ($company_short_name === null || (is_array($company_short_name) && count($company_short_name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $company_short_name when calling companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGet'
+                'Missing the required parameter $company_short_name when calling getDetailAvailabilityTour'
             );
         }
-        // verify the required parameter 'tour_id' is set
-        if ($tour_id === null || (is_array($tour_id) && count($tour_id) === 0)) {
+        // verify the required parameter 'availability_id' is set
+        if ($availability_id === null || (is_array($availability_id) && count($availability_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $tour_id when calling companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGet'
-            );
-        }
-        // verify the required parameter 'date' is set
-        if ($date === null || (is_array($date) && count($date) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $date when calling companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGet'
+                'Missing the required parameter $availability_id when calling getDetailAvailabilityTour'
             );
         }
 
-        $resourcePath = '/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date/{date}/';
+        $resourcePath = '/companies/{company-short-name}/availabilities/{availability-id}/';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2049,18 +1701,10 @@ class DefaultApi
             );
         }
         // path params
-        if ($tour_id !== null) {
+        if ($availability_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'tour-id' . '}',
-                ObjectSerializer::toPathValue($tour_id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($date !== null) {
-            $resourcePath = str_replace(
-                '{' . 'date' . '}',
-                ObjectSerializer::toPathValue($date),
+                '{' . 'availability-id' . '}',
+                ObjectSerializer::toPathValue($availability_id),
                 $resourcePath
             );
         }
@@ -2140,9 +1784,9 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGet
+     * Operation getToursByDateRange
      *
-     * get company tours
+     * Get company tours by date range
      *
      * @param  string $company_short_name Company short name (required)
      * @param  int $tour_id Tour id (required)
@@ -2153,16 +1797,16 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\AvailabilitiesList
      */
-    public function companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGet($company_short_name, $tour_id, $start_date, $end_date)
+    public function getToursByDateRange($company_short_name, $tour_id, $start_date, $end_date)
     {
-        list($response) = $this->companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGetWithHttpInfo($company_short_name, $tour_id, $start_date, $end_date);
+        list($response) = $this->getToursByDateRangeWithHttpInfo($company_short_name, $tour_id, $start_date, $end_date);
         return $response;
     }
 
     /**
-     * Operation companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGetWithHttpInfo
+     * Operation getToursByDateRangeWithHttpInfo
      *
-     * get company tours
+     * Get company tours by date range
      *
      * @param  string $company_short_name Company short name (required)
      * @param  int $tour_id Tour id (required)
@@ -2173,10 +1817,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\AvailabilitiesList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGetWithHttpInfo($company_short_name, $tour_id, $start_date, $end_date)
+    public function getToursByDateRangeWithHttpInfo($company_short_name, $tour_id, $start_date, $end_date)
     {
         $returnType = '\Swagger\Client\Model\AvailabilitiesList';
-        $request = $this->companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGetRequest($company_short_name, $tour_id, $start_date, $end_date);
+        $request = $this->getToursByDateRangeRequest($company_short_name, $tour_id, $start_date, $end_date);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2238,9 +1882,9 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGetAsync
+     * Operation getToursByDateRangeAsync
      *
-     * get company tours
+     * Get company tours by date range
      *
      * @param  string $company_short_name Company short name (required)
      * @param  int $tour_id Tour id (required)
@@ -2250,9 +1894,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGetAsync($company_short_name, $tour_id, $start_date, $end_date)
+    public function getToursByDateRangeAsync($company_short_name, $tour_id, $start_date, $end_date)
     {
-        return $this->companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGetAsyncWithHttpInfo($company_short_name, $tour_id, $start_date, $end_date)
+        return $this->getToursByDateRangeAsyncWithHttpInfo($company_short_name, $tour_id, $start_date, $end_date)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2261,9 +1905,9 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGetAsyncWithHttpInfo
+     * Operation getToursByDateRangeAsyncWithHttpInfo
      *
-     * get company tours
+     * Get company tours by date range
      *
      * @param  string $company_short_name Company short name (required)
      * @param  int $tour_id Tour id (required)
@@ -2273,10 +1917,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGetAsyncWithHttpInfo($company_short_name, $tour_id, $start_date, $end_date)
+    public function getToursByDateRangeAsyncWithHttpInfo($company_short_name, $tour_id, $start_date, $end_date)
     {
         $returnType = '\Swagger\Client\Model\AvailabilitiesList';
-        $request = $this->companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGetRequest($company_short_name, $tour_id, $start_date, $end_date);
+        $request = $this->getToursByDateRangeRequest($company_short_name, $tour_id, $start_date, $end_date);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2316,7 +1960,7 @@ class DefaultApi
     }
 
     /**
-     * Create request for operation 'companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGet'
+     * Create request for operation 'getToursByDateRange'
      *
      * @param  string $company_short_name Company short name (required)
      * @param  int $tour_id Tour id (required)
@@ -2326,30 +1970,30 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGetRequest($company_short_name, $tour_id, $start_date, $end_date)
+    protected function getToursByDateRangeRequest($company_short_name, $tour_id, $start_date, $end_date)
     {
         // verify the required parameter 'company_short_name' is set
         if ($company_short_name === null || (is_array($company_short_name) && count($company_short_name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $company_short_name when calling companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGet'
+                'Missing the required parameter $company_short_name when calling getToursByDateRange'
             );
         }
         // verify the required parameter 'tour_id' is set
         if ($tour_id === null || (is_array($tour_id) && count($tour_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $tour_id when calling companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGet'
+                'Missing the required parameter $tour_id when calling getToursByDateRange'
             );
         }
         // verify the required parameter 'start_date' is set
         if ($start_date === null || (is_array($start_date) && count($start_date) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $start_date when calling companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGet'
+                'Missing the required parameter $start_date when calling getToursByDateRange'
             );
         }
         // verify the required parameter 'end_date' is set
         if ($end_date === null || (is_array($end_date) && count($end_date) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $end_date when calling companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGet'
+                'Missing the required parameter $end_date when calling getToursByDateRange'
             );
         }
 
@@ -2469,35 +2113,41 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesGet
+     * Operation getToursOnDate
      *
-     * Get companies
+     * Get tours for date
      *
+     * @param  string $company_short_name Company short name (required)
+     * @param  int $tour_id Tour id (required)
+     * @param  string $date Date (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\CompaniesList
+     * @return \Swagger\Client\Model\AvailabilitiesList
      */
-    public function companiesGet()
+    public function getToursOnDate($company_short_name, $tour_id, $date)
     {
-        list($response) = $this->companiesGetWithHttpInfo();
+        list($response) = $this->getToursOnDateWithHttpInfo($company_short_name, $tour_id, $date);
         return $response;
     }
 
     /**
-     * Operation companiesGetWithHttpInfo
+     * Operation getToursOnDateWithHttpInfo
      *
-     * Get companies
+     * Get tours for date
      *
+     * @param  string $company_short_name Company short name (required)
+     * @param  int $tour_id Tour id (required)
+     * @param  string $date Date (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\CompaniesList, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\AvailabilitiesList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function companiesGetWithHttpInfo()
+    public function getToursOnDateWithHttpInfo($company_short_name, $tour_id, $date)
     {
-        $returnType = '\Swagger\Client\Model\CompaniesList';
-        $request = $this->companiesGetRequest();
+        $returnType = '\Swagger\Client\Model\AvailabilitiesList';
+        $request = $this->getToursOnDateRequest($company_short_name, $tour_id, $date);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2548,7 +2198,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\CompaniesList',
+                        '\Swagger\Client\Model\AvailabilitiesList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2559,17 +2209,20 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesGetAsync
+     * Operation getToursOnDateAsync
      *
-     * Get companies
+     * Get tours for date
      *
+     * @param  string $company_short_name Company short name (required)
+     * @param  int $tour_id Tour id (required)
+     * @param  string $date Date (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function companiesGetAsync()
+    public function getToursOnDateAsync($company_short_name, $tour_id, $date)
     {
-        return $this->companiesGetAsyncWithHttpInfo()
+        return $this->getToursOnDateAsyncWithHttpInfo($company_short_name, $tour_id, $date)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2578,18 +2231,21 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesGetAsyncWithHttpInfo
+     * Operation getToursOnDateAsyncWithHttpInfo
      *
-     * Get companies
+     * Get tours for date
      *
+     * @param  string $company_short_name Company short name (required)
+     * @param  int $tour_id Tour id (required)
+     * @param  string $date Date (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function companiesGetAsyncWithHttpInfo()
+    public function getToursOnDateAsyncWithHttpInfo($company_short_name, $tour_id, $date)
     {
-        $returnType = '\Swagger\Client\Model\CompaniesList';
-        $request = $this->companiesGetRequest();
+        $returnType = '\Swagger\Client\Model\AvailabilitiesList';
+        $request = $this->getToursOnDateRequest($company_short_name, $tour_id, $date);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2629,16 +2285,37 @@ class DefaultApi
     }
 
     /**
-     * Create request for operation 'companiesGet'
+     * Create request for operation 'getToursOnDate'
      *
+     * @param  string $company_short_name Company short name (required)
+     * @param  int $tour_id Tour id (required)
+     * @param  string $date Date (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function companiesGetRequest()
+    protected function getToursOnDateRequest($company_short_name, $tour_id, $date)
     {
+        // verify the required parameter 'company_short_name' is set
+        if ($company_short_name === null || (is_array($company_short_name) && count($company_short_name) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $company_short_name when calling getToursOnDate'
+            );
+        }
+        // verify the required parameter 'tour_id' is set
+        if ($tour_id === null || (is_array($tour_id) && count($tour_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $tour_id when calling getToursOnDate'
+            );
+        }
+        // verify the required parameter 'date' is set
+        if ($date === null || (is_array($date) && count($date) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $date when calling getToursOnDate'
+            );
+        }
 
-        $resourcePath = '/companies/';
+        $resourcePath = '/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date/{date}/';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2646,6 +2323,30 @@ class DefaultApi
         $multipart = false;
 
 
+        // path params
+        if ($company_short_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'company-short-name' . '}',
+                ObjectSerializer::toPathValue($company_short_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($tour_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'tour-id' . '}',
+                ObjectSerializer::toPathValue($tour_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($date !== null) {
+            $resourcePath = str_replace(
+                '{' . 'date' . '}',
+                ObjectSerializer::toPathValue($date),
+                $resourcePath
+            );
+        }
 
         // body params
         $_tempBody = null;
@@ -2715,6 +2416,305 @@ class DefaultApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation validateBookingTour
+     *
+     * Validate bookings
+     *
+     * @param  string $company_short_name Company short name (required)
+     * @param  int $availability_id Availability id (required)
+     * @param  \Swagger\Client\Model\Booking $body body (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\BookingValidateResponse
+     */
+    public function validateBookingTour($company_short_name, $availability_id, $body = null)
+    {
+        list($response) = $this->validateBookingTourWithHttpInfo($company_short_name, $availability_id, $body);
+        return $response;
+    }
+
+    /**
+     * Operation validateBookingTourWithHttpInfo
+     *
+     * Validate bookings
+     *
+     * @param  string $company_short_name Company short name (required)
+     * @param  int $availability_id Availability id (required)
+     * @param  \Swagger\Client\Model\Booking $body (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\BookingValidateResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function validateBookingTourWithHttpInfo($company_short_name, $availability_id, $body = null)
+    {
+        $returnType = '\Swagger\Client\Model\BookingValidateResponse';
+        $request = $this->validateBookingTourRequest($company_short_name, $availability_id, $body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\BookingValidateResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation validateBookingTourAsync
+     *
+     * Validate bookings
+     *
+     * @param  string $company_short_name Company short name (required)
+     * @param  int $availability_id Availability id (required)
+     * @param  \Swagger\Client\Model\Booking $body (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function validateBookingTourAsync($company_short_name, $availability_id, $body = null)
+    {
+        return $this->validateBookingTourAsyncWithHttpInfo($company_short_name, $availability_id, $body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation validateBookingTourAsyncWithHttpInfo
+     *
+     * Validate bookings
+     *
+     * @param  string $company_short_name Company short name (required)
+     * @param  int $availability_id Availability id (required)
+     * @param  \Swagger\Client\Model\Booking $body (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function validateBookingTourAsyncWithHttpInfo($company_short_name, $availability_id, $body = null)
+    {
+        $returnType = '\Swagger\Client\Model\BookingValidateResponse';
+        $request = $this->validateBookingTourRequest($company_short_name, $availability_id, $body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'validateBookingTour'
+     *
+     * @param  string $company_short_name Company short name (required)
+     * @param  int $availability_id Availability id (required)
+     * @param  \Swagger\Client\Model\Booking $body (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function validateBookingTourRequest($company_short_name, $availability_id, $body = null)
+    {
+        // verify the required parameter 'company_short_name' is set
+        if ($company_short_name === null || (is_array($company_short_name) && count($company_short_name) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $company_short_name when calling validateBookingTour'
+            );
+        }
+        // verify the required parameter 'availability_id' is set
+        if ($availability_id === null || (is_array($availability_id) && count($availability_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $availability_id when calling validateBookingTour'
+            );
+        }
+
+        $resourcePath = '/companies/{company-short-name}/availabilities/{availability-id}/bookings/validate/';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($company_short_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'company-short-name' . '}',
+                ObjectSerializer::toPathValue($company_short_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($availability_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'availability-id' . '}',
+                ObjectSerializer::toPathValue($availability_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['text/plain']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['text/plain'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-FareHarbor-API-App');
+        if ($apiKey !== null) {
+            $headers['X-FareHarbor-API-App'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-FareHarbor-API-User');
+        if ($apiKey !== null) {
+            $headers['X-FareHarbor-API-User'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

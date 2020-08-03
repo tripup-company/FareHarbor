@@ -1,6 +1,6 @@
 <?php
 /**
- * BookingResponse
+ * CustomerTypeRateResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * BookingResponse Class Doc Comment
+ * CustomerTypeRateResponse Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BookingResponse implements ModelInterface, ArrayAccess
+class CustomerTypeRateResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class BookingResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BookingResponse';
+    protected static $swaggerModelName = 'CustomerTypeRateResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,12 @@ class BookingResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'booking' => '\Swagger\Client\Model\BookingResponseObject'    ];
+        'pk' => 'int',
+'total' => 'int',
+'capacity' => 'int',
+'is_exclusive' => 'bool',
+'customer_type' => '\Swagger\Client\Model\CustomerType',
+'customer_prototype' => '\Swagger\Client\Model\CustomerBookingPrototype'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +69,12 @@ class BookingResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'booking' => null    ];
+        'pk' => null,
+'total' => null,
+'capacity' => null,
+'is_exclusive' => null,
+'customer_type' => null,
+'customer_prototype' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +103,12 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'booking' => 'booking'    ];
+        'pk' => 'pk',
+'total' => 'total',
+'capacity' => 'capacity',
+'is_exclusive' => 'is_exclusive',
+'customer_type' => 'customer_type',
+'customer_prototype' => 'customer_prototype'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +116,12 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'booking' => 'setBooking'    ];
+        'pk' => 'setPk',
+'total' => 'setTotal',
+'capacity' => 'setCapacity',
+'is_exclusive' => 'setIsExclusive',
+'customer_type' => 'setCustomerType',
+'customer_prototype' => 'setCustomerPrototype'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +129,12 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'booking' => 'getBooking'    ];
+        'pk' => 'getPk',
+'total' => 'getTotal',
+'capacity' => 'getCapacity',
+'is_exclusive' => 'getIsExclusive',
+'customer_type' => 'getCustomerType',
+'customer_prototype' => 'getCustomerPrototype'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +194,12 @@ class BookingResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['booking'] = isset($data['booking']) ? $data['booking'] : null;
+        $this->container['pk'] = isset($data['pk']) ? $data['pk'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['capacity'] = isset($data['capacity']) ? $data['capacity'] : null;
+        $this->container['is_exclusive'] = isset($data['is_exclusive']) ? $data['is_exclusive'] : null;
+        $this->container['customer_type'] = isset($data['customer_type']) ? $data['customer_type'] : null;
+        $this->container['customer_prototype'] = isset($data['customer_prototype']) ? $data['customer_prototype'] : null;
     }
 
     /**
@@ -197,25 +227,145 @@ class BookingResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets booking
+     * Gets pk
      *
-     * @return \Swagger\Client\Model\BookingResponseObject
+     * @return int
      */
-    public function getBooking()
+    public function getPk()
     {
-        return $this->container['booking'];
+        return $this->container['pk'];
     }
 
     /**
-     * Sets booking
+     * Sets pk
      *
-     * @param \Swagger\Client\Model\BookingResponseObject $booking booking
+     * @param int $pk pk
      *
      * @return $this
      */
-    public function setBooking($booking)
+    public function setPk($pk)
     {
-        $this->container['booking'] = $booking;
+        $this->container['pk'] = $pk;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     *
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     *
+     * @param int $total total
+     *
+     * @return $this
+     */
+    public function setTotal($total)
+    {
+        $this->container['total'] = $total;
+
+        return $this;
+    }
+
+    /**
+     * Gets capacity
+     *
+     * @return int
+     */
+    public function getCapacity()
+    {
+        return $this->container['capacity'];
+    }
+
+    /**
+     * Sets capacity
+     *
+     * @param int $capacity capacity
+     *
+     * @return $this
+     */
+    public function setCapacity($capacity)
+    {
+        $this->container['capacity'] = $capacity;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_exclusive
+     *
+     * @return bool
+     */
+    public function getIsExclusive()
+    {
+        return $this->container['is_exclusive'];
+    }
+
+    /**
+     * Sets is_exclusive
+     *
+     * @param bool $is_exclusive is_exclusive
+     *
+     * @return $this
+     */
+    public function setIsExclusive($is_exclusive)
+    {
+        $this->container['is_exclusive'] = $is_exclusive;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer_type
+     *
+     * @return \Swagger\Client\Model\CustomerType
+     */
+    public function getCustomerType()
+    {
+        return $this->container['customer_type'];
+    }
+
+    /**
+     * Sets customer_type
+     *
+     * @param \Swagger\Client\Model\CustomerType $customer_type customer_type
+     *
+     * @return $this
+     */
+    public function setCustomerType($customer_type)
+    {
+        $this->container['customer_type'] = $customer_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer_prototype
+     *
+     * @return \Swagger\Client\Model\CustomerBookingPrototype
+     */
+    public function getCustomerPrototype()
+    {
+        return $this->container['customer_prototype'];
+    }
+
+    /**
+     * Sets customer_prototype
+     *
+     * @param \Swagger\Client\Model\CustomerBookingPrototype $customer_prototype customer_prototype
+     *
+     * @return $this
+     */
+    public function setCustomerPrototype($customer_prototype)
+    {
+        $this->container['customer_prototype'] = $customer_prototype;
 
         return $this;
     }

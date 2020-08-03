@@ -64,7 +64,7 @@ class Location implements ModelInterface, ArrayAccess
 'latitude' => 'float',
 'google_place_id' => 'string',
 'tripadvisor_url' => 'string',
-'address' => '\Swagger\Client\Model\LocationAddress'    ];
+'address' => '\Swagger\Client\Model\Address'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -439,7 +439,7 @@ class Location implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \Swagger\Client\Model\LocationAddress
+     * @return \Swagger\Client\Model\Address
      */
     public function getAddress()
     {
@@ -449,7 +449,7 @@ class Location implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \Swagger\Client\Model\LocationAddress $address address
+     * @param \Swagger\Client\Model\Address $address address
      *
      * @return $this
      */

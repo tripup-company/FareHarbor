@@ -1,6 +1,6 @@
 <?php
 /**
- * BookingResponse
+ * Contact
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * BookingResponse Class Doc Comment
+ * Contact Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BookingResponse implements ModelInterface, ArrayAccess
+class Contact implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class BookingResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BookingResponse';
+    protected static $swaggerModelName = 'Contact';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class BookingResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'booking' => '\Swagger\Client\Model\BookingResponseObject'    ];
+        'name' => 'string',
+'phone' => 'string',
+'email' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +66,9 @@ class BookingResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'booking' => null    ];
+        'name' => null,
+'phone' => null,
+'email' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +97,9 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'booking' => 'booking'    ];
+        'name' => 'name',
+'phone' => 'phone',
+'email' => 'email'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +107,9 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'booking' => 'setBooking'    ];
+        'name' => 'setName',
+'phone' => 'setPhone',
+'email' => 'setEmail'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +117,9 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'booking' => 'getBooking'    ];
+        'name' => 'getName',
+'phone' => 'getPhone',
+'email' => 'getEmail'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +179,9 @@ class BookingResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['booking'] = isset($data['booking']) ? $data['booking'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
     }
 
     /**
@@ -197,25 +209,73 @@ class BookingResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets booking
+     * Gets name
      *
-     * @return \Swagger\Client\Model\BookingResponseObject
+     * @return string
      */
-    public function getBooking()
+    public function getName()
     {
-        return $this->container['booking'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets booking
+     * Sets name
      *
-     * @param \Swagger\Client\Model\BookingResponseObject $booking booking
+     * @param string $name name
      *
      * @return $this
      */
-    public function setBooking($booking)
+    public function setName($name)
     {
-        $this->container['booking'] = $booking;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string $phone phone
+     *
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string $email email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
 
         return $this;
     }

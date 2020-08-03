@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **latitude** | **float** |  | [optional] 
 **google_place_id** | **string** |  | [optional] 
 **tripadvisor_url** | **string** |  | [optional] 
-**address** | [**\Swagger\Client\Model\LocationAddress**](LocationAddress.md) |  | [optional] 
+**address** | [**\Swagger\Client\Model\Address**](Address.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

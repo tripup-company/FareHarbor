@@ -1,6 +1,6 @@
 <?php
 /**
- * BookingResponse
+ * CustomerCheckInStatus
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * BookingResponse Class Doc Comment
+ * CustomerCheckInStatus Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BookingResponse implements ModelInterface, ArrayAccess
+class CustomerCheckInStatus implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class BookingResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BookingResponse';
+    protected static $swaggerModelName = 'CustomerCheckInStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,8 @@ class BookingResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'booking' => '\Swagger\Client\Model\BookingResponseObject'    ];
+        'name' => 'string',
+'type' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +65,8 @@ class BookingResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'booking' => null    ];
+        'name' => null,
+'type' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +95,8 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'booking' => 'booking'    ];
+        'name' => 'name',
+'type' => 'type'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +104,8 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'booking' => 'setBooking'    ];
+        'name' => 'setName',
+'type' => 'setType'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +113,8 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'booking' => 'getBooking'    ];
+        'name' => 'getName',
+'type' => 'getType'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +174,8 @@ class BookingResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['booking'] = isset($data['booking']) ? $data['booking'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -197,25 +203,49 @@ class BookingResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets booking
+     * Gets name
      *
-     * @return \Swagger\Client\Model\BookingResponseObject
+     * @return string
      */
-    public function getBooking()
+    public function getName()
     {
-        return $this->container['booking'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets booking
+     * Sets name
      *
-     * @param \Swagger\Client\Model\BookingResponseObject $booking booking
+     * @param string $name name
      *
      * @return $this
      */
-    public function setBooking($booking)
+    public function setName($name)
     {
-        $this->container['booking'] = $booking;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

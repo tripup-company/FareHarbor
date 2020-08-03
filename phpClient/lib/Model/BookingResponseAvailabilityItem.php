@@ -1,6 +1,6 @@
 <?php
 /**
- * BookingResponse
+ * BookingResponseAvailabilityItem
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * BookingResponse Class Doc Comment
+ * BookingResponseAvailabilityItem Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BookingResponse implements ModelInterface, ArrayAccess
+class BookingResponseAvailabilityItem implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class BookingResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BookingResponse';
+    protected static $swaggerModelName = 'BookingResponseAvailabilityItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,8 @@ class BookingResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'booking' => '\Swagger\Client\Model\BookingResponseObject'    ];
+        'pk' => 'int',
+'name' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +65,8 @@ class BookingResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'booking' => null    ];
+        'pk' => null,
+'name' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +95,8 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'booking' => 'booking'    ];
+        'pk' => 'pk',
+'name' => 'name'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +104,8 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'booking' => 'setBooking'    ];
+        'pk' => 'setPk',
+'name' => 'setName'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +113,8 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'booking' => 'getBooking'    ];
+        'pk' => 'getPk',
+'name' => 'getName'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +174,8 @@ class BookingResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['booking'] = isset($data['booking']) ? $data['booking'] : null;
+        $this->container['pk'] = isset($data['pk']) ? $data['pk'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
     /**
@@ -197,25 +203,49 @@ class BookingResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets booking
+     * Gets pk
      *
-     * @return \Swagger\Client\Model\BookingResponseObject
+     * @return int
      */
-    public function getBooking()
+    public function getPk()
     {
-        return $this->container['booking'];
+        return $this->container['pk'];
     }
 
     /**
-     * Sets booking
+     * Sets pk
      *
-     * @param \Swagger\Client\Model\BookingResponseObject $booking booking
+     * @param int $pk pk
      *
      * @return $this
      */
-    public function setBooking($booking)
+    public function setPk($pk)
     {
-        $this->container['booking'] = $booking;
+        $this->container['pk'] = $pk;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }

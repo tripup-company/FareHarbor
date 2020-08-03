@@ -76,61 +76,10 @@ $availability_id = 56; // int | Availability id
 $body = new \Swagger\Client\Model\Booking(); // \Swagger\Client\Model\Booking | 
 
 try {
-    $result = $apiInstance->companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPost($company_short_name, $availability_id, $body);
+    $result = $apiInstance->bookingTour($company_short_name, $availability_id, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPost: ', $e->getMessage(), PHP_EOL;
-}
-
-// Configure API key authorization: apiApp
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-App', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-App', 'Bearer');
-// Configure API key authorization: apiUser
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-User', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-User', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$company_short_name = "company_short_name_example"; // string | Company short name
-$availability_id = 56; // int | Availability id
-$body = new \Swagger\Client\Model\Booking(); // \Swagger\Client\Model\Booking | 
-
-try {
-    $result = $apiInstance->companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePost($company_short_name, $availability_id, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePost: ', $e->getMessage(), PHP_EOL;
-}
-
-// Configure API key authorization: apiApp
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-App', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-App', 'Bearer');
-// Configure API key authorization: apiUser
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-User', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-User', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$company_short_name = "company_short_name_example"; // string | Company short name
-$availability_id = 56; // int | Availability id
-
-try {
-    $result = $apiInstance->companiesCompanyShortNameAvailabilitiesAvailabilityIdGet($company_short_name, $availability_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->companiesCompanyShortNameAvailabilitiesAvailabilityIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->bookingTour: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiApp
@@ -177,10 +126,33 @@ $company_short_name = "company_short_name_example"; // string | Company short na
 $booking_id = "booking_id_example"; // string | Booking id
 
 try {
-    $result = $apiInstance->companiesCompanyShortNameBookingsBookingIdGet($company_short_name, $booking_id);
+    $result = $apiInstance->getBookingDetail($company_short_name, $booking_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->companiesCompanyShortNameBookingsBookingIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->getBookingDetail: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiApp
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-App', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-App', 'Bearer');
+// Configure API key authorization: apiUser
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-User', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-User', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getCompanies();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getCompanies: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiApp
@@ -201,10 +173,10 @@ $apiInstance = new Swagger\Client\Api\DefaultApi(
 $company_short_name = "company_short_name_example"; // string | Company short name
 
 try {
-    $result = $apiInstance->companiesCompanyShortNameItemsGet($company_short_name);
+    $result = $apiInstance->getCompanyItems($company_short_name);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->companiesCompanyShortNameItemsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->getCompanyItems: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiApp
@@ -223,14 +195,13 @@ $apiInstance = new Swagger\Client\Api\DefaultApi(
     $config
 );
 $company_short_name = "company_short_name_example"; // string | Company short name
-$tour_id = 56; // int | Tour id
-$date = "date_example"; // string | Date
+$availability_id = 56; // int | Availability id
 
 try {
-    $result = $apiInstance->companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGet($company_short_name, $tour_id, $date);
+    $result = $apiInstance->getDetailAvailabilityTour($company_short_name, $availability_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->getDetailAvailabilityTour: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiApp
@@ -254,10 +225,10 @@ $start_date = "start_date_example"; // string | Date
 $end_date = "end_date_example"; // string | Date
 
 try {
-    $result = $apiInstance->companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGet($company_short_name, $tour_id, $start_date, $end_date);
+    $result = $apiInstance->getToursByDateRange($company_short_name, $tour_id, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->getToursByDateRange: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiApp
@@ -275,12 +246,41 @@ $apiInstance = new Swagger\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$company_short_name = "company_short_name_example"; // string | Company short name
+$tour_id = 56; // int | Tour id
+$date = "date_example"; // string | Date
 
 try {
-    $result = $apiInstance->companiesGet();
+    $result = $apiInstance->getToursOnDate($company_short_name, $tour_id, $date);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->companiesGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->getToursOnDate: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiApp
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-App', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-App', 'Bearer');
+// Configure API key authorization: apiUser
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-User', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-User', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_short_name = "company_short_name_example"; // string | Company short name
+$availability_id = 56; // int | Availability id
+$body = new \Swagger\Client\Model\Booking(); // \Swagger\Client\Model\Booking | 
+
+try {
+    $result = $apiInstance->validateBookingTour($company_short_name, $availability_id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->validateBookingTour: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -291,41 +291,38 @@ All URIs are relative to *https://demo.fareharbor.com/api/external/v1/*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsPost**](docs/Api/DefaultApi.md#companiescompanyshortnameavailabilitiesavailabilityidbookingspost) | **POST** /companies/{company-short-name}/availabilities/{availability-id}/bookings/ | booking
-*DefaultApi* | [**companiesCompanyShortNameAvailabilitiesAvailabilityIdBookingsValidatePost**](docs/Api/DefaultApi.md#companiescompanyshortnameavailabilitiesavailabilityidbookingsvalidatepost) | **POST** /companies/{company-short-name}/availabilities/{availability-id}/bookings/validate/ | check bookings
-*DefaultApi* | [**companiesCompanyShortNameAvailabilitiesAvailabilityIdGet**](docs/Api/DefaultApi.md#companiescompanyshortnameavailabilitiesavailabilityidget) | **GET** /companies/{company-short-name}/availabilities/{availability-id}/ | get availability tour
-*DefaultApi* | [**companiesCompanyShortNameBookingsBookingIdDelete**](docs/Api/DefaultApi.md#companiescompanyshortnamebookingsbookingiddelete) | **DELETE** /companies/{company-short-name}/bookings/{booking-id}/ | get availability tour
-*DefaultApi* | [**companiesCompanyShortNameBookingsBookingIdGet**](docs/Api/DefaultApi.md#companiescompanyshortnamebookingsbookingidget) | **GET** /companies/{company-short-name}/bookings/{booking-id}/ | get availability tour
-*DefaultApi* | [**companiesCompanyShortNameItemsGet**](docs/Api/DefaultApi.md#companiescompanyshortnameitemsget) | **GET** /companies/{company-short-name}/items/ | get company tours
-*DefaultApi* | [**companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateDateGet**](docs/Api/DefaultApi.md#companiescompanyshortnameitemstouridminimalavailabilitiesdatedateget) | **GET** /companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date/{date}/ | get company tours
-*DefaultApi* | [**companiesCompanyShortNameItemsTourIdMinimalAvailabilitiesDateRangeStartDateEndDateGet**](docs/Api/DefaultApi.md#companiescompanyshortnameitemstouridminimalavailabilitiesdaterangestartdateenddateget) | **GET** /companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date-range/{start-date}/{end-date}/ | get company tours
-*DefaultApi* | [**companiesGet**](docs/Api/DefaultApi.md#companiesget) | **GET** /companies/ | Get companies
+*DefaultApi* | [**bookingTour**](docs/Api/DefaultApi.md#bookingtour) | **POST** /companies/{company-short-name}/availabilities/{availability-id}/bookings/ | Booking tour
+*DefaultApi* | [**companiesCompanyShortNameBookingsBookingIdDelete**](docs/Api/DefaultApi.md#companiescompanyshortnamebookingsbookingiddelete) | **DELETE** /companies/{company-short-name}/bookings/{booking-id}/ | Cancel a booking
+*DefaultApi* | [**getBookingDetail**](docs/Api/DefaultApi.md#getbookingdetail) | **GET** /companies/{company-short-name}/bookings/{booking-id}/ | Get booking details
+*DefaultApi* | [**getCompanies**](docs/Api/DefaultApi.md#getcompanies) | **GET** /companies/ | Get companies
+*DefaultApi* | [**getCompanyItems**](docs/Api/DefaultApi.md#getcompanyitems) | **GET** /companies/{company-short-name}/items/ | Get company tours
+*DefaultApi* | [**getDetailAvailabilityTour**](docs/Api/DefaultApi.md#getdetailavailabilitytour) | **GET** /companies/{company-short-name}/availabilities/{availability-id}/ | Get availability tour
+*DefaultApi* | [**getToursByDateRange**](docs/Api/DefaultApi.md#gettoursbydaterange) | **GET** /companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date-range/{start-date}/{end-date}/ | Get company tours by date range
+*DefaultApi* | [**getToursOnDate**](docs/Api/DefaultApi.md#gettoursondate) | **GET** /companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date/{date}/ | Get tours for date
+*DefaultApi* | [**validateBookingTour**](docs/Api/DefaultApi.md#validatebookingtour) | **POST** /companies/{company-short-name}/availabilities/{availability-id}/bookings/validate/ | Validate bookings
 
 ## Documentation For Models
 
+ - [Address](docs/Model/Address.md)
  - [AvailabilitiesList](docs/Model/AvailabilitiesList.md)
  - [Availability](docs/Model/Availability.md)
  - [Booking](docs/Model/Booking.md)
- - [BookingContact](docs/Model/BookingContact.md)
  - [BookingResponse](docs/Model/BookingResponse.md)
- - [BookingResponseBooking](docs/Model/BookingResponseBooking.md)
- - [BookingResponseBookingAvailability](docs/Model/BookingResponseBookingAvailability.md)
- - [BookingResponseBookingAvailabilityCustomerTypeRates](docs/Model/BookingResponseBookingAvailabilityCustomerTypeRates.md)
- - [BookingResponseBookingAvailabilityCustomerTypeRatesCustomerPrototype](docs/Model/BookingResponseBookingAvailabilityCustomerTypeRatesCustomerPrototype.md)
- - [BookingResponseBookingAvailabilityCustomerTypeRatesCustomerType](docs/Model/BookingResponseBookingAvailabilityCustomerTypeRatesCustomerType.md)
- - [BookingResponseBookingAvailabilityItem](docs/Model/BookingResponseBookingAvailabilityItem.md)
+ - [BookingResponseAvailability](docs/Model/BookingResponseAvailability.md)
+ - [BookingResponseAvailabilityItem](docs/Model/BookingResponseAvailabilityItem.md)
+ - [BookingResponseObject](docs/Model/BookingResponseObject.md)
  - [BookingValidateResponse](docs/Model/BookingValidateResponse.md)
  - [CompaniesList](docs/Model/CompaniesList.md)
  - [Company](docs/Model/Company.md)
+ - [Contact](docs/Model/Contact.md)
  - [Customer](docs/Model/Customer.md)
  - [CustomerBookingPrototype](docs/Model/CustomerBookingPrototype.md)
- - [CustomerCheckinStatus](docs/Model/CustomerCheckinStatus.md)
- - [CustomerCustomerTypeRate](docs/Model/CustomerCustomerTypeRate.md)
+ - [CustomerCheckInStatus](docs/Model/CustomerCheckInStatus.md)
  - [CustomerPrototype](docs/Model/CustomerPrototype.md)
  - [CustomerType](docs/Model/CustomerType.md)
  - [CustomerTypeRate](docs/Model/CustomerTypeRate.md)
+ - [CustomerTypeRateResponse](docs/Model/CustomerTypeRateResponse.md)
  - [Location](docs/Model/Location.md)
- - [LocationAddress](docs/Model/LocationAddress.md)
  - [Tour](docs/Model/Tour.md)
  - [TourImage](docs/Model/TourImage.md)
  - [ToursList](docs/Model/ToursList.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * BookingResponse
+ * BookingResponseAvailability
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * BookingResponse Class Doc Comment
+ * BookingResponseAvailability Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BookingResponse implements ModelInterface, ArrayAccess
+class BookingResponseAvailability implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class BookingResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BookingResponse';
+    protected static $swaggerModelName = 'BookingResponseAvailability';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,12 @@ class BookingResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'booking' => '\Swagger\Client\Model\BookingResponseObject'    ];
+        'pk' => 'int',
+'start_at' => 'string',
+'end_at' => 'string',
+'capacity' => 'int',
+'item' => '\Swagger\Client\Model\BookingResponseAvailabilityItem',
+'customer_type_rates' => '\Swagger\Client\Model\CustomerTypeRateResponse'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +69,12 @@ class BookingResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'booking' => null    ];
+        'pk' => null,
+'start_at' => null,
+'end_at' => null,
+'capacity' => null,
+'item' => null,
+'customer_type_rates' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +103,12 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'booking' => 'booking'    ];
+        'pk' => 'pk',
+'start_at' => 'start_at',
+'end_at' => 'end_at',
+'capacity' => 'capacity',
+'item' => 'item',
+'customer_type_rates' => 'customer_type_rates'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +116,12 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'booking' => 'setBooking'    ];
+        'pk' => 'setPk',
+'start_at' => 'setStartAt',
+'end_at' => 'setEndAt',
+'capacity' => 'setCapacity',
+'item' => 'setItem',
+'customer_type_rates' => 'setCustomerTypeRates'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +129,12 @@ class BookingResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'booking' => 'getBooking'    ];
+        'pk' => 'getPk',
+'start_at' => 'getStartAt',
+'end_at' => 'getEndAt',
+'capacity' => 'getCapacity',
+'item' => 'getItem',
+'customer_type_rates' => 'getCustomerTypeRates'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +194,12 @@ class BookingResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['booking'] = isset($data['booking']) ? $data['booking'] : null;
+        $this->container['pk'] = isset($data['pk']) ? $data['pk'] : null;
+        $this->container['start_at'] = isset($data['start_at']) ? $data['start_at'] : null;
+        $this->container['end_at'] = isset($data['end_at']) ? $data['end_at'] : null;
+        $this->container['capacity'] = isset($data['capacity']) ? $data['capacity'] : null;
+        $this->container['item'] = isset($data['item']) ? $data['item'] : null;
+        $this->container['customer_type_rates'] = isset($data['customer_type_rates']) ? $data['customer_type_rates'] : null;
     }
 
     /**
@@ -197,25 +227,145 @@ class BookingResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets booking
+     * Gets pk
      *
-     * @return \Swagger\Client\Model\BookingResponseObject
+     * @return int
      */
-    public function getBooking()
+    public function getPk()
     {
-        return $this->container['booking'];
+        return $this->container['pk'];
     }
 
     /**
-     * Sets booking
+     * Sets pk
      *
-     * @param \Swagger\Client\Model\BookingResponseObject $booking booking
+     * @param int $pk pk
      *
      * @return $this
      */
-    public function setBooking($booking)
+    public function setPk($pk)
     {
-        $this->container['booking'] = $booking;
+        $this->container['pk'] = $pk;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_at
+     *
+     * @return string
+     */
+    public function getStartAt()
+    {
+        return $this->container['start_at'];
+    }
+
+    /**
+     * Sets start_at
+     *
+     * @param string $start_at start_at
+     *
+     * @return $this
+     */
+    public function setStartAt($start_at)
+    {
+        $this->container['start_at'] = $start_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_at
+     *
+     * @return string
+     */
+    public function getEndAt()
+    {
+        return $this->container['end_at'];
+    }
+
+    /**
+     * Sets end_at
+     *
+     * @param string $end_at end_at
+     *
+     * @return $this
+     */
+    public function setEndAt($end_at)
+    {
+        $this->container['end_at'] = $end_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets capacity
+     *
+     * @return int
+     */
+    public function getCapacity()
+    {
+        return $this->container['capacity'];
+    }
+
+    /**
+     * Sets capacity
+     *
+     * @param int $capacity capacity
+     *
+     * @return $this
+     */
+    public function setCapacity($capacity)
+    {
+        $this->container['capacity'] = $capacity;
+
+        return $this;
+    }
+
+    /**
+     * Gets item
+     *
+     * @return \Swagger\Client\Model\BookingResponseAvailabilityItem
+     */
+    public function getItem()
+    {
+        return $this->container['item'];
+    }
+
+    /**
+     * Sets item
+     *
+     * @param \Swagger\Client\Model\BookingResponseAvailabilityItem $item item
+     *
+     * @return $this
+     */
+    public function setItem($item)
+    {
+        $this->container['item'] = $item;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer_type_rates
+     *
+     * @return \Swagger\Client\Model\CustomerTypeRateResponse
+     */
+    public function getCustomerTypeRates()
+    {
+        return $this->container['customer_type_rates'];
+    }
+
+    /**
+     * Sets customer_type_rates
+     *
+     * @param \Swagger\Client\Model\CustomerTypeRateResponse $customer_type_rates customer_type_rates
+     *
+     * @return $this
+     */
+    public function setCustomerTypeRates($customer_type_rates)
+    {
+        $this->container['customer_type_rates'] = $customer_type_rates;
 
         return $this;
     }

@@ -57,8 +57,8 @@ class Customer implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'checkin_url' => 'string',
-'checkin_status' => '\Swagger\Client\Model\CustomerCheckinStatus',
-'customer_type_rate' => '\Swagger\Client\Model\CustomerCustomerTypeRate'    ];
+'checkin_status' => '\Swagger\Client\Model\CustomerCheckInStatus',
+'customer_type_rate' => '\Swagger\Client\Model\CustomerTypeRateResponse'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -235,7 +235,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets checkin_status
      *
-     * @return \Swagger\Client\Model\CustomerCheckinStatus
+     * @return \Swagger\Client\Model\CustomerCheckInStatus
      */
     public function getCheckinStatus()
     {
@@ -245,7 +245,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets checkin_status
      *
-     * @param \Swagger\Client\Model\CustomerCheckinStatus $checkin_status checkin_status
+     * @param \Swagger\Client\Model\CustomerCheckInStatus $checkin_status checkin_status
      *
      * @return $this
      */
@@ -259,7 +259,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets customer_type_rate
      *
-     * @return \Swagger\Client\Model\CustomerCustomerTypeRate
+     * @return \Swagger\Client\Model\CustomerTypeRateResponse
      */
     public function getCustomerTypeRate()
     {
@@ -269,7 +269,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets customer_type_rate
      *
-     * @param \Swagger\Client\Model\CustomerCustomerTypeRate $customer_type_rate customer_type_rate
+     * @param \Swagger\Client\Model\CustomerTypeRateResponse $customer_type_rate customer_type_rate
      *
      * @return $this
      */
