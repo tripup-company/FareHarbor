@@ -101,10 +101,10 @@ $company_short_name = "company_short_name_example"; // string | Company short na
 $booking_id = "booking_id_example"; // string | Booking id
 
 try {
-    $result = $apiInstance->companiesCompanyShortNameBookingsBookingIdDelete($company_short_name, $booking_id);
+    $result = $apiInstance->deleteBooking($company_short_name, $booking_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->companiesCompanyShortNameBookingsBookingIdDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->deleteBooking: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiApp
@@ -292,7 +292,7 @@ All URIs are relative to *https://demo.fareharbor.com/api/external/v1/*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultApi* | [**bookingTour**](docs/Api/DefaultApi.md#bookingtour) | **POST** /companies/{company-short-name}/availabilities/{availability-id}/bookings/ | Booking tour
-*DefaultApi* | [**companiesCompanyShortNameBookingsBookingIdDelete**](docs/Api/DefaultApi.md#companiescompanyshortnamebookingsbookingiddelete) | **DELETE** /companies/{company-short-name}/bookings/{booking-id}/ | Cancel a booking
+*DefaultApi* | [**deleteBooking**](docs/Api/DefaultApi.md#deletebooking) | **DELETE** /companies/{company-short-name}/bookings/{booking-id}/ | Cancel a booking
 *DefaultApi* | [**getBookingDetail**](docs/Api/DefaultApi.md#getbookingdetail) | **GET** /companies/{company-short-name}/bookings/{booking-id}/ | Get booking details
 *DefaultApi* | [**getCompanies**](docs/Api/DefaultApi.md#getcompanies) | **GET** /companies/ | Get companies
 *DefaultApi* | [**getCompanyItems**](docs/Api/DefaultApi.md#getcompanyitems) | **GET** /companies/{company-short-name}/items/ | Get company tours

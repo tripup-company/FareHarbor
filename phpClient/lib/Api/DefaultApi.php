@@ -386,7 +386,7 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameBookingsBookingIdDelete
+     * Operation deleteBooking
      *
      * Cancel a booking
      *
@@ -397,14 +397,14 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\AvailabilitiesList
      */
-    public function companiesCompanyShortNameBookingsBookingIdDelete($company_short_name, $booking_id)
+    public function deleteBooking($company_short_name, $booking_id)
     {
-        list($response) = $this->companiesCompanyShortNameBookingsBookingIdDeleteWithHttpInfo($company_short_name, $booking_id);
+        list($response) = $this->deleteBookingWithHttpInfo($company_short_name, $booking_id);
         return $response;
     }
 
     /**
-     * Operation companiesCompanyShortNameBookingsBookingIdDeleteWithHttpInfo
+     * Operation deleteBookingWithHttpInfo
      *
      * Cancel a booking
      *
@@ -415,10 +415,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\AvailabilitiesList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function companiesCompanyShortNameBookingsBookingIdDeleteWithHttpInfo($company_short_name, $booking_id)
+    public function deleteBookingWithHttpInfo($company_short_name, $booking_id)
     {
         $returnType = '\Swagger\Client\Model\AvailabilitiesList';
-        $request = $this->companiesCompanyShortNameBookingsBookingIdDeleteRequest($company_short_name, $booking_id);
+        $request = $this->deleteBookingRequest($company_short_name, $booking_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -480,7 +480,7 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameBookingsBookingIdDeleteAsync
+     * Operation deleteBookingAsync
      *
      * Cancel a booking
      *
@@ -490,9 +490,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function companiesCompanyShortNameBookingsBookingIdDeleteAsync($company_short_name, $booking_id)
+    public function deleteBookingAsync($company_short_name, $booking_id)
     {
-        return $this->companiesCompanyShortNameBookingsBookingIdDeleteAsyncWithHttpInfo($company_short_name, $booking_id)
+        return $this->deleteBookingAsyncWithHttpInfo($company_short_name, $booking_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -501,7 +501,7 @@ class DefaultApi
     }
 
     /**
-     * Operation companiesCompanyShortNameBookingsBookingIdDeleteAsyncWithHttpInfo
+     * Operation deleteBookingAsyncWithHttpInfo
      *
      * Cancel a booking
      *
@@ -511,10 +511,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function companiesCompanyShortNameBookingsBookingIdDeleteAsyncWithHttpInfo($company_short_name, $booking_id)
+    public function deleteBookingAsyncWithHttpInfo($company_short_name, $booking_id)
     {
         $returnType = '\Swagger\Client\Model\AvailabilitiesList';
-        $request = $this->companiesCompanyShortNameBookingsBookingIdDeleteRequest($company_short_name, $booking_id);
+        $request = $this->deleteBookingRequest($company_short_name, $booking_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -554,7 +554,7 @@ class DefaultApi
     }
 
     /**
-     * Create request for operation 'companiesCompanyShortNameBookingsBookingIdDelete'
+     * Create request for operation 'deleteBooking'
      *
      * @param  string $company_short_name Company short name (required)
      * @param  string $booking_id Booking id (required)
@@ -562,18 +562,18 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function companiesCompanyShortNameBookingsBookingIdDeleteRequest($company_short_name, $booking_id)
+    protected function deleteBookingRequest($company_short_name, $booking_id)
     {
         // verify the required parameter 'company_short_name' is set
         if ($company_short_name === null || (is_array($company_short_name) && count($company_short_name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $company_short_name when calling companiesCompanyShortNameBookingsBookingIdDelete'
+                'Missing the required parameter $company_short_name when calling deleteBooking'
             );
         }
         // verify the required parameter 'booking_id' is set
         if ($booking_id === null || (is_array($booking_id) && count($booking_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $booking_id when calling companiesCompanyShortNameBookingsBookingIdDelete'
+                'Missing the required parameter $booking_id when calling deleteBooking'
             );
         }
 

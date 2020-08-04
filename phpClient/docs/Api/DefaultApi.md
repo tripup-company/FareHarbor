@@ -5,7 +5,7 @@ All URIs are relative to *https://demo.fareharbor.com/api/external/v1/*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**bookingTour**](DefaultApi.md#bookingtour) | **POST** /companies/{company-short-name}/availabilities/{availability-id}/bookings/ | Booking tour
-[**companiesCompanyShortNameBookingsBookingIdDelete**](DefaultApi.md#companiescompanyshortnamebookingsbookingiddelete) | **DELETE** /companies/{company-short-name}/bookings/{booking-id}/ | Cancel a booking
+[**deleteBooking**](DefaultApi.md#deletebooking) | **DELETE** /companies/{company-short-name}/bookings/{booking-id}/ | Cancel a booking
 [**getBookingDetail**](DefaultApi.md#getbookingdetail) | **GET** /companies/{company-short-name}/bookings/{booking-id}/ | Get booking details
 [**getCompanies**](DefaultApi.md#getcompanies) | **GET** /companies/ | Get companies
 [**getCompanyItems**](DefaultApi.md#getcompanyitems) | **GET** /companies/{company-short-name}/items/ | Get company tours
@@ -75,8 +75,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **companiesCompanyShortNameBookingsBookingIdDelete**
-> \Swagger\Client\Model\AvailabilitiesList companiesCompanyShortNameBookingsBookingIdDelete($company_short_name, $booking_id)
+# **deleteBooking**
+> \Swagger\Client\Model\AvailabilitiesList deleteBooking($company_short_name, $booking_id)
 
 Cancel a booking
 
@@ -104,10 +104,10 @@ $company_short_name = "company_short_name_example"; // string | Company short na
 $booking_id = "booking_id_example"; // string | Booking id
 
 try {
-    $result = $apiInstance->companiesCompanyShortNameBookingsBookingIdDelete($company_short_name, $booking_id);
+    $result = $apiInstance->deleteBooking($company_short_name, $booking_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->companiesCompanyShortNameBookingsBookingIdDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->deleteBooking: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

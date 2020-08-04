@@ -372,6 +372,7 @@
       "delete" : {
         "summary" : "Cancel a booking",
         "description" : "Cancel a booking",
+        "operationId" : "deleteBooking",
         "parameters" : [ {
           "name" : "company-short-name",
           "in" : "path",
@@ -734,11 +735,43 @@
           }
         }
       },
+      "BookingResponseObject" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "uuid" : {
+            "type" : "string"
+          },
+          "status" : {
+            "type" : "string"
+          },
+          "availability" : {
+            "$ref" : "#/components/schemas/BookingResponseAvailability"
+          },
+          "contact" : {
+            "$ref" : "#/components/schemas/Contact"
+          },
+          "customers" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Customer"
+            }
+          },
+          "invoice_price" : {
+            "type" : "integer"
+          },
+          "order" : {
+            "type" : "string"
+          }
+        }
+      },
       "BookingResponse" : {
         "type" : "object",
         "properties" : {
           "booking" : {
-            "$ref" : "#/components/schemas/BookingResponse_booking"
+            "$ref" : "#/components/schemas/BookingResponseObject"
           }
         }
       },
@@ -818,38 +851,6 @@
           },
           "total" : {
             "type" : "integer"
-          }
-        }
-      },
-      "BookingResponse_booking" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
-          },
-          "uuid" : {
-            "type" : "string"
-          },
-          "status" : {
-            "type" : "string"
-          },
-          "availability" : {
-            "$ref" : "#/components/schemas/BookingResponseAvailability"
-          },
-          "contact" : {
-            "$ref" : "#/components/schemas/Contact"
-          },
-          "customers" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Customer"
-            }
-          },
-          "invoice_price" : {
-            "type" : "integer"
-          },
-          "order" : {
-            "type" : "string"
           }
         }
       }

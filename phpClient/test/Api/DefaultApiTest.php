@@ -81,12 +81,12 @@ class DefaultApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for companiesCompanyShortNameBookingsBookingIdDelete
+     * Test case for deleteBooking
      *
      * Cancel a booking.
      *
      */
-    public function testCompaniesCompanyShortNameBookingsBookingIdDelete()
+    public function testDeleteBooking()
     {
     }
 
