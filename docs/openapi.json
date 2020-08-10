@@ -14,6 +14,9 @@
     "version" : "1.0.0"
   },
   "servers" : [ {
+    "url" : "https://virtserver.swaggerhub.com/tripup/FareHarbour/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  }, {
     "url" : "https://demo.fareharbor.com/api/external/v1/",
     "description" : "Demo fareharbor"
   } ],
@@ -371,7 +374,7 @@
             "content" : {
               "text/plain" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/AvailabilitiesList"
+                  "$ref" : "#/components/schemas/BookingResponse"
                 }
               }
             }
@@ -412,7 +415,7 @@
             "content" : {
               "text/plain" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/AvailabilitiesList"
+                  "$ref" : "#/components/schemas/BookingResponse"
                 }
               }
             }
