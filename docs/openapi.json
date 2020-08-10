@@ -15,7 +15,7 @@
   },
   "servers" : [ {
     "url" : "https://demo.fareharbor.com/api/external/v1/",
-    "description" : "SwaggerHub API Auto Mocking"
+    "description" : "Demo fareharbor"
   } ],
   "security" : [ {
     "apiApp" : [ "297a6594-f0e7-46ad-8955-3d3207beff30" ],
@@ -24,6 +24,7 @@
   "paths" : {
     "/companies/" : {
       "get" : {
+        "tags" : [ "Companies" ],
         "summary" : "Get companies",
         "description" : "The response provides the list of partner companies that Meine Landausfluege has access to in FareHarbor.",
         "operationId" : "getCompanies",
@@ -43,6 +44,7 @@
     },
     "/companies/{company-short-name}/items/" : {
       "get" : {
+        "tags" : [ "Tours" ],
         "summary" : "Get company tours",
         "description" : "The response provides the list of items that Meine Landausfluege can book for Sweden Walking Tours.",
         "operationId" : "getCompanyItems",
@@ -74,6 +76,7 @@
     },
     "/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date/{date}/" : {
       "get" : {
+        "tags" : [ "Tours" ],
         "summary" : "Get tours for date",
         "description" : "The response provides the list of bookable availabilities on 05August2020 for item 27550 (Sweden Walking Tours).A date that occurs in the future should be specified.",
         "operationId" : "getToursOnDate",
@@ -97,7 +100,8 @@
           "explode" : false,
           "schema" : {
             "type" : "integer"
-          }
+          },
+          "example" : 20580
         }, {
           "name" : "date",
           "in" : "path",
@@ -125,6 +129,7 @@
     },
     "/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date-range/{start-date}/{end-date}/" : {
       "get" : {
+        "tags" : [ "Tours" ],
         "summary" : "Get company tours by date range",
         "description" : "The response provides the list of bookable availabilities for 05August2020 through 07August2020 for item 27550 (Sweden Walking Tours). A date range that occurs in the future should be specified.",
         "operationId" : "getToursByDateRange",
@@ -186,6 +191,7 @@
     },
     "/companies/{company-short-name}/availabilities/{availability-id}/" : {
       "get" : {
+        "tags" : [ "Tours" ],
         "summary" : "Get availability tour",
         "description" : "The response provides details for availability 21198329 (Sweden Walking Tours).",
         "operationId" : "getDetailAvailabilityTour",
@@ -228,6 +234,7 @@
     },
     "/companies/{company-short-name}/availabilities/{availability-id}/bookings/validate/" : {
       "post" : {
+        "tags" : [ "Booking" ],
         "summary" : "Validate bookings",
         "description" : "Prior to creating a booking, the validate endpoint provides a means to validate a booking request.",
         "operationId" : "validateBookingTour",
@@ -279,6 +286,7 @@
     },
     "/companies/{company-short-name}/availabilities/{availability-id}/bookings/" : {
       "post" : {
+        "tags" : [ "Booking" ],
         "summary" : "Booking tour",
         "description" : "create booking; isset(rebooking param) ? rebooking :booking",
         "operationId" : "bookingTour",
@@ -330,6 +338,7 @@
     },
     "/companies/{company-short-name}/bookings/{booking-id}/" : {
       "get" : {
+        "tags" : [ "Booking" ],
         "summary" : "Get booking details",
         "description" : "Retrieve details for a specific booking",
         "operationId" : "getBookingDetail",
@@ -370,6 +379,7 @@
         }
       },
       "delete" : {
+        "tags" : [ "Booking" ],
         "summary" : "Cancel a booking",
         "description" : "Cancel a booking",
         "operationId" : "deleteBooking",
