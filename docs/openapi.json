@@ -35,7 +35,7 @@
           "200" : {
             "description" : "OK",
             "content" : {
-              "text/plain" : {
+              "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/CompaniesList"
                 }
@@ -67,7 +67,7 @@
           "200" : {
             "description" : "OK",
             "content" : {
-              "text/plain" : {
+              "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/ToursList"
                 }
@@ -120,7 +120,7 @@
           "200" : {
             "description" : "OK",
             "content" : {
-              "text/plain" : {
+              "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/AvailabilitiesList"
                 }
@@ -182,7 +182,7 @@
           "200" : {
             "description" : "OK",
             "content" : {
-              "text/plain" : {
+              "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/AvailabilitiesList"
                 }
@@ -225,9 +225,9 @@
           "200" : {
             "description" : "OK",
             "content" : {
-              "text/plain" : {
+              "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/AvailabilitiesList"
+                  "$ref" : "#/components/schemas/AvailabilityDetail"
                 }
               }
             }
@@ -277,7 +277,7 @@
           "200" : {
             "description" : "OK",
             "content" : {
-              "text/plain" : {
+              "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/BookingValidateResponse"
                 }
@@ -329,7 +329,7 @@
           "200" : {
             "description" : "OK",
             "content" : {
-              "text/plain" : {
+              "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/BookingResponse"
                 }
@@ -372,9 +372,9 @@
           "200" : {
             "description" : "OK",
             "content" : {
-              "text/plain" : {
+              "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/BookingResponse"
+                  "$ref" : "#/components/schemas/AvailabilitiesList"
                 }
               }
             }
@@ -413,9 +413,9 @@
           "200" : {
             "description" : "OK",
             "content" : {
-              "text/plain" : {
+              "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/BookingResponse"
+                  "$ref" : "#/components/schemas/AvailabilitiesList"
                 }
               }
             }
@@ -610,7 +610,7 @@
       "ToursList" : {
         "type" : "object",
         "properties" : {
-          "companies" : {
+          "items" : {
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/Tour"
@@ -654,6 +654,91 @@
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/Availability"
+            }
+          }
+        }
+      },
+      "CustomFieldInstance" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "custom_field" : {
+            "$ref" : "#/components/schemas/CustomField"
+          }
+        }
+      },
+      "CustomField" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "type" : {
+            "type" : "string"
+          }
+        }
+      },
+      "AvailabilityItem" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "AvailabilityCustomerTypeRates" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "total" : {
+            "type" : "integer"
+          },
+          "capacity" : {
+            "type" : "integer"
+          },
+          "customer_type" : {
+            "$ref" : "#/components/schemas/CustomerType"
+          },
+          "customer_prototype" : {
+            "$ref" : "#/components/schemas/CustomerBookingPrototype"
+          },
+          "custom_field_instances" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CustomFieldInstance"
+            }
+          }
+        }
+      },
+      "AvailabilityDetail" : {
+        "type" : "object",
+        "properties" : {
+          "pk" : {
+            "type" : "integer"
+          },
+          "start_at" : {
+            "type" : "string"
+          },
+          "end_at" : {
+            "type" : "string"
+          },
+          "capacity" : {
+            "type" : "integer"
+          },
+          "item" : {
+            "$ref" : "#/components/schemas/AvailabilityItem"
+          },
+          "customer_type_rates" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/AvailabilityCustomerTypeRates"
             }
           }
         }
