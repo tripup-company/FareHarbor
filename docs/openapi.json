@@ -374,7 +374,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/AvailabilitiesList"
+                  "$ref" : "#/components/schemas/BookingResponse"
                 }
               }
             }
@@ -415,7 +415,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/AvailabilitiesList"
+                  "$ref" : "#/components/schemas/BookingResponse"
                 }
               }
             }
@@ -618,6 +618,29 @@
           }
         }
       },
+      "CustomerTypeRateAvailability" : {
+        "type" : "object",
+        "properties" : {
+          "customer_prototype" : {
+            "$ref" : "#/components/schemas/CustomerPrototype"
+          },
+          "capacity" : {
+            "type" : "integer"
+          },
+          "minimum_party_size" : {
+            "type" : "integer"
+          },
+          "customer_type" : {
+            "$ref" : "#/components/schemas/CustomerType"
+          },
+          "maximum_party_size" : {
+            "type" : "integer"
+          },
+          "pk" : {
+            "type" : "integer"
+          }
+        }
+      },
       "Availability" : {
         "type" : "object",
         "properties" : {
@@ -630,7 +653,7 @@
           "customer_type_rates" : {
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/CustomerPrototype"
+              "$ref" : "#/components/schemas/CustomerTypeRateAvailability"
             }
           },
           "minimum_party_size" : {
@@ -650,7 +673,7 @@
       "AvailabilitiesList" : {
         "type" : "object",
         "properties" : {
-          "companies" : {
+          "availabilities" : {
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/Availability"
