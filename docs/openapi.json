@@ -1,43 +1,54 @@
 {
-  "openapi" : "3.0.0",
-  "info" : {
-    "title" : "fareharbor API",
-    "description" : "This is a simple API",
-    "termsOfService" : "https://demo.fareharbor.com/api/external/v1/",
-    "contact" : {
-      "email" : "you@your-company.com"
+  "openapi": "3.0.0",
+  "info": {
+    "title": "fareharbor API",
+    "description": "This is a simple API",
+    "termsOfService": "https://demo.fareharbor.com/api/external/v1/",
+    "contact": {
+      "email": "you@your-company.com"
     },
-    "license" : {
-      "name" : "Apache 2.0",
-      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version" : "1.0.0"
+    "version": "1.0.0"
   },
-  "servers" : [ {
-    "url" : "https://virtserver.swaggerhub.com/tripup/FareHarbour/1.0.0",
-    "description" : "SwaggerHub API Auto Mocking"
-  }, {
-    "url" : "https://demo.fareharbor.com/api/external/v1/",
-    "description" : "Demo fareharbor"
-  } ],
-  "security" : [ {
-    "apiApp" : [ "297a6594-f0e7-46ad-8955-3d3207beff30" ],
-    "apiUser" : [ "ba6c4210-ae80-4b11-b015-c414e6dbf4ae" ]
-  } ],
-  "paths" : {
-    "/companies/" : {
-      "get" : {
-        "tags" : [ "Companies" ],
-        "summary" : "Get companies",
-        "description" : "The response provides the list of partner companies that Meine Landausfluege has access to in FareHarbor.",
-        "operationId" : "getCompanies",
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/CompaniesList"
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/tripup/FareHarbour/1.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    },
+    {
+      "url": "https://demo.fareharbor.com/api/external/v1/",
+      "description": "Demo fareharbor"
+    }
+  ],
+  "security": [
+    {
+      "apiApp": [
+        "297a6594-f0e7-46ad-8955-3d3207beff30"
+      ],
+      "apiUser": [
+        "ba6c4210-ae80-4b11-b015-c414e6dbf4ae"
+      ]
+    }
+  ],
+  "paths": {
+    "/companies/": {
+      "get": {
+        "tags": [
+          "Companies"
+        ],
+        "summary": "Get companies",
+        "description": "The response provides the list of partner companies that Meine Landausfluege has access to in FareHarbor.",
+        "operationId": "getCompanies",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompaniesList"
                 }
               }
             }
@@ -45,31 +56,35 @@
         }
       }
     },
-    "/companies/{company-short-name}/items/" : {
-      "get" : {
-        "tags" : [ "Tours" ],
-        "summary" : "Get company tours",
-        "description" : "The response provides the list of items that Meine Landausfluege can book for Sweden Walking Tours.",
-        "operationId" : "getCompanyItems",
-        "parameters" : [ {
-          "name" : "company-short-name",
-          "in" : "path",
-          "description" : "Company short name",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
-          },
-          "example" : "elprado-eur"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/ToursList"
+    "/companies/{company-short-name}/items/": {
+      "get": {
+        "tags": [
+          "Tours"
+        ],
+        "summary": "Get company tours",
+        "description": "The response provides the list of items that Meine Landausfluege can book for Sweden Walking Tours.",
+        "operationId": "getCompanyItems",
+        "parameters": [
+          {
+            "name": "company-short-name",
+            "in": "path",
+            "description": "Company short name",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "elprado-eur"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ToursList"
                 }
               }
             }
@@ -77,52 +92,58 @@
         }
       }
     },
-    "/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date/{date}/" : {
-      "get" : {
-        "tags" : [ "Tours" ],
-        "summary" : "Get tours for date",
-        "description" : "The response provides the list of bookable availabilities on 05August2020 for item 27550 (Sweden Walking Tours).A date that occurs in the future should be specified.",
-        "operationId" : "getToursOnDate",
-        "parameters" : [ {
-          "name" : "company-short-name",
-          "in" : "path",
-          "description" : "Company short name",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
+    "/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date/{date}/": {
+      "get": {
+        "tags": [
+          "Tours"
+        ],
+        "summary": "Get tours for date",
+        "description": "The response provides the list of bookable availabilities on 05August2020 for item 27550 (Sweden Walking Tours).A date that occurs in the future should be specified.",
+        "operationId": "getToursOnDate",
+        "parameters": [
+          {
+            "name": "company-short-name",
+            "in": "path",
+            "description": "Company short name",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "elprado-eur"
           },
-          "example" : "elprado-eur"
-        }, {
-          "name" : "tour-id",
-          "in" : "path",
-          "description" : "Tour id",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "integer"
+          {
+            "name": "tour-id",
+            "in": "path",
+            "description": "Tour id",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 20580
           },
-          "example" : 20580
-        }, {
-          "name" : "date",
-          "in" : "path",
-          "description" : "Date",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
+          {
+            "name": "date",
+            "in": "path",
+            "description": "Date",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/AvailabilitiesList"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AvailabilitiesList"
                 }
               }
             }
@@ -130,61 +151,68 @@
         }
       }
     },
-    "/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date-range/{start-date}/{end-date}/" : {
-      "get" : {
-        "tags" : [ "Tours" ],
-        "summary" : "Get company tours by date range",
-        "description" : "The response provides the list of bookable availabilities for 05August2020 through 07August2020 for item 27550 (Sweden Walking Tours). A date range that occurs in the future should be specified.",
-        "operationId" : "getToursByDateRange",
-        "parameters" : [ {
-          "name" : "company-short-name",
-          "in" : "path",
-          "description" : "Company short name",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
+    "/companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date-range/{start-date}/{end-date}/": {
+      "get": {
+        "tags": [
+          "Tours"
+        ],
+        "summary": "Get company tours by date range",
+        "description": "The response provides the list of bookable availabilities for 05August2020 through 07August2020 for item 27550 (Sweden Walking Tours). A date range that occurs in the future should be specified.",
+        "operationId": "getToursByDateRange",
+        "parameters": [
+          {
+            "name": "company-short-name",
+            "in": "path",
+            "description": "Company short name",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "elprado-eur"
           },
-          "example" : "elprado-eur"
-        }, {
-          "name" : "tour-id",
-          "in" : "path",
-          "description" : "Tour id",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "integer"
+          {
+            "name": "tour-id",
+            "in": "path",
+            "description": "Tour id",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "start-date",
+            "in": "path",
+            "description": "Date",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end-date",
+            "in": "path",
+            "description": "Date",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
           }
-        }, {
-          "name" : "start-date",
-          "in" : "path",
-          "description" : "Date",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
-          "name" : "end-date",
-          "in" : "path",
-          "description" : "Date",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/AvailabilitiesList"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AvailabilitiesList"
                 }
               }
             }
@@ -192,42 +220,47 @@
         }
       }
     },
-    "/companies/{company-short-name}/availabilities/{availability-id}/" : {
-      "get" : {
-        "tags" : [ "Tours" ],
-        "summary" : "Get availability tour",
-        "description" : "The response provides details for availability 21198329 (Sweden Walking Tours).",
-        "operationId" : "getDetailAvailabilityTour",
-        "parameters" : [ {
-          "name" : "company-short-name",
-          "in" : "path",
-          "description" : "Company short name",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
+    "/companies/{company-short-name}/availabilities/{availability-id}/": {
+      "get": {
+        "tags": [
+          "Tours"
+        ],
+        "summary": "Get availability tour",
+        "description": "The response provides details for availability 21198329 (Sweden Walking Tours).",
+        "operationId": "getDetailAvailabilityTour",
+        "parameters": [
+          {
+            "name": "company-short-name",
+            "in": "path",
+            "description": "Company short name",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "elprado-eur"
           },
-          "example" : "elprado-eur"
-        }, {
-          "name" : "availability-id",
-          "in" : "path",
-          "description" : "Availability id",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "integer"
-          },
-          "example" : 21198329
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/AvailabilityDetail"
+          {
+            "name": "availability-id",
+            "in": "path",
+            "description": "Availability id",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 21198329
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AvailabilityDetail"
                 }
               }
             }
@@ -235,51 +268,56 @@
         }
       }
     },
-    "/companies/{company-short-name}/availabilities/{availability-id}/bookings/validate/" : {
-      "post" : {
-        "tags" : [ "Booking" ],
-        "summary" : "Validate bookings",
-        "description" : "Prior to creating a booking, the validate endpoint provides a means to validate a booking request.",
-        "operationId" : "validateBookingTour",
-        "parameters" : [ {
-          "name" : "company-short-name",
-          "in" : "path",
-          "description" : "Company short name",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
+    "/companies/{company-short-name}/availabilities/{availability-id}/bookings/validate/": {
+      "post": {
+        "tags": [
+          "Booking"
+        ],
+        "summary": "Validate bookings",
+        "description": "Prior to creating a booking, the validate endpoint provides a means to validate a booking request.",
+        "operationId": "validateBookingTour",
+        "parameters": [
+          {
+            "name": "company-short-name",
+            "in": "path",
+            "description": "Company short name",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "elprado-eur"
           },
-          "example" : "elprado-eur"
-        }, {
-          "name" : "availability-id",
-          "in" : "path",
-          "description" : "Availability id",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "integer"
-          },
-          "example" : 21198329
-        } ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/Booking"
+          {
+            "name": "availability-id",
+            "in": "path",
+            "description": "Availability id",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 21198329
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Booking"
               }
             }
           }
         },
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BookingValidateResponse"
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingValidateResponse"
                 }
               }
             }
@@ -287,51 +325,56 @@
         }
       }
     },
-    "/companies/{company-short-name}/availabilities/{availability-id}/bookings/" : {
-      "post" : {
-        "tags" : [ "Booking" ],
-        "summary" : "Booking tour",
-        "description" : "create booking; isset(rebooking param) ? rebooking :booking",
-        "operationId" : "bookingTour",
-        "parameters" : [ {
-          "name" : "company-short-name",
-          "in" : "path",
-          "description" : "Company short name",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
+    "/companies/{company-short-name}/availabilities/{availability-id}/bookings/": {
+      "post": {
+        "tags": [
+          "Booking"
+        ],
+        "summary": "Booking tour",
+        "description": "create booking; isset(rebooking param) ? rebooking :booking",
+        "operationId": "bookingTour",
+        "parameters": [
+          {
+            "name": "company-short-name",
+            "in": "path",
+            "description": "Company short name",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "elprado-eur"
           },
-          "example" : "elprado-eur"
-        }, {
-          "name" : "availability-id",
-          "in" : "path",
-          "description" : "Availability id",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "integer"
-          },
-          "example" : 21198329
-        } ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/Booking"
+          {
+            "name": "availability-id",
+            "in": "path",
+            "description": "Availability id",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 21198329
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Booking"
               }
             }
           }
         },
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BookingResponse"
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingResponse"
                 }
               }
             }
@@ -339,83 +382,150 @@
         }
       }
     },
-    "/companies/{company-short-name}/bookings/{booking-id}/" : {
-      "get" : {
-        "tags" : [ "Booking" ],
-        "summary" : "Get booking details",
-        "description" : "Retrieve details for a specific booking",
-        "operationId" : "getBookingDetail",
-        "parameters" : [ {
-          "name" : "company-short-name",
-          "in" : "path",
-          "description" : "Company short name",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
+    "/companies/{company-short-name}/bookings/{booking-id}/note/": {
+      "put": {
+        "tags": [
+          "Booking"
+        ],
+        "summary": "Update the booking note",
+        "description": "Update the booking note",
+        "operationId": "noteBooking",
+        "parameters": [
+          {
+            "name": "company-short-name",
+            "in": "path",
+            "description": "Company short name",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "elprado-eur"
           },
-          "example" : "elprado-eur"
-        }, {
-          "name" : "booking-id",
-          "in" : "path",
-          "description" : "Booking id",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
+          {
+            "name": "booking-id",
+            "in": "path",
+            "description": "Booking id",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8df9a6bf-ee5d-4c59-91fd-affd9f33d0d1"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Note"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{company-short-name}/bookings/{booking-id}/": {
+      "get": {
+        "tags": [
+          "Booking"
+        ],
+        "summary": "Get booking details",
+        "description": "Retrieve details for a specific booking",
+        "operationId": "getBookingDetail",
+        "parameters": [
+          {
+            "name": "company-short-name",
+            "in": "path",
+            "description": "Company short name",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "elprado-eur"
           },
-          "example" : "8df9a6bf-ee5d-4c59-91fd-affd9f33d0d1"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BookingResponse"
+          {
+            "name": "booking-id",
+            "in": "path",
+            "description": "Booking id",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8df9a6bf-ee5d-4c59-91fd-affd9f33d0d1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingResponse"
                 }
               }
             }
           }
         }
       },
-      "delete" : {
-        "tags" : [ "Booking" ],
-        "summary" : "Cancel a booking",
-        "description" : "Cancel a booking",
-        "operationId" : "deleteBooking",
-        "parameters" : [ {
-          "name" : "company-short-name",
-          "in" : "path",
-          "description" : "Company short name",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
+      "delete": {
+        "tags": [
+          "Booking"
+        ],
+        "summary": "Cancel a booking",
+        "description": "Cancel a booking",
+        "operationId": "deleteBooking",
+        "parameters": [
+          {
+            "name": "company-short-name",
+            "in": "path",
+            "description": "Company short name",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "elprado-eur"
           },
-          "example" : "elprado-eur"
-        }, {
-          "name" : "booking-id",
-          "in" : "path",
-          "description" : "Booking id",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
-          },
-          "example" : "8df9a6bf-ee5d-4c59-91fd-affd9f33d0d1"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BookingResponse"
+          {
+            "name": "booking-id",
+            "in": "path",
+            "description": "Booking id",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8df9a6bf-ee5d-4c59-91fd-affd9f33d0d1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingResponse"
                 }
               }
             }
@@ -424,568 +534,579 @@
       }
     }
   },
-  "components" : {
-    "schemas" : {
-      "Company" : {
-        "type" : "object",
-        "properties" : {
-          "currency" : {
-            "maxLength" : 3,
-            "type" : "string"
+  "components": {
+    "schemas": {
+      "Company": {
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "type": "string"
           },
-          "shortname" : {
-            "type" : "string"
+          "shortname": {
+            "type": "string"
           },
-          "name" : {
-            "type" : "string"
+          "name": {
+            "type": "string"
           }
         },
-        "description" : "Company description"
+        "description": "Company description"
       },
-      "CompaniesList" : {
-        "type" : "object",
-        "properties" : {
-          "companies" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Company"
+      "CompaniesList": {
+        "type": "object",
+        "properties": {
+          "companies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Company"
             }
           }
         }
       },
-      "TourImage" : {
-        "type" : "object",
-        "properties" : {
-          "image_cdn_url" : {
-            "type" : "string"
+      "TourImage": {
+        "type": "object",
+        "properties": {
+          "image_cdn_url": {
+            "type": "string"
           },
-          "pk" : {
-            "type" : "integer"
+          "pk": {
+            "type": "integer"
           },
-          "gallery" : {
-            "type" : "string"
+          "gallery": {
+            "type": "string"
           }
         }
       },
-      "Location" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
+      "Location": {
+        "type": "object",
+        "properties": {
+          "pk": {
+            "type": "integer"
           },
-          "type" : {
-            "type" : "string"
+          "type": {
+            "type": "string"
           },
-          "note" : {
-            "type" : "string"
+          "note": {
+            "type": "string"
           },
-          "note_safe_html" : {
-            "type" : "string"
+          "note_safe_html": {
+            "type": "string"
           },
-          "longitude" : {
-            "type" : "number",
-            "format" : "float"
+          "longitude": {
+            "type": "number",
+            "format": "float"
           },
-          "latitude" : {
-            "type" : "number",
-            "format" : "float"
+          "latitude": {
+            "type": "number",
+            "format": "float"
           },
-          "google_place_id" : {
-            "type" : "string"
+          "google_place_id": {
+            "type": "string"
           },
-          "tripadvisor_url" : {
-            "type" : "string"
+          "tripadvisor_url": {
+            "type": "string"
           },
-          "address" : {
-            "$ref" : "#/components/schemas/Address"
+          "address": {
+            "$ref": "#/components/schemas/Address"
           }
         }
       },
-      "Address" : {
-        "type" : "object",
-        "properties" : {
-          "city" : {
-            "type" : "string"
+      "Address": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string"
           },
-          "country" : {
-            "type" : "string"
+          "country": {
+            "type": "string"
           },
-          "postal_code" : {
-            "type" : "string"
+          "postal_code": {
+            "type": "string"
           },
-          "province" : {
-            "type" : "string"
+          "province": {
+            "type": "string"
           },
-          "street" : {
-            "type" : "string"
+          "street": {
+            "type": "string"
           }
         }
       },
-      "CustomerPrototype" : {
-        "type" : "object",
-        "properties" : {
-          "note" : {
-            "type" : "string"
+      "CustomerPrototype": {
+        "type": "object",
+        "properties": {
+          "note": {
+            "type": "string"
           },
-          "pk" : {
-            "type" : "integer"
+          "pk": {
+            "type": "integer"
           },
-          "total" : {
-            "type" : "integer"
+          "total": {
+            "type": "integer"
           },
-          "display_name" : {
-            "type" : "string"
+          "display_name": {
+            "type": "string"
           },
-          "total_including_tax" : {
-            "type" : "integer"
+          "total_including_tax": {
+            "type": "integer"
           }
         }
       },
-      "Tour" : {
-        "type" : "object",
-        "properties" : {
-          "image_cdn_url" : {
-            "type" : "string"
+      "Tour": {
+        "type": "object",
+        "properties": {
+          "image_cdn_url": {
+            "type": "string"
           },
-          "description" : {
-            "type" : "string"
+          "description": {
+            "type": "string"
           },
-          "cancellation_policy" : {
-            "type" : "string"
+          "cancellation_policy": {
+            "type": "string"
           },
-          "images" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/TourImage"
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TourImage"
             }
           },
-          "description_bullets" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
+          "description_bullets": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           },
-          "locations" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Location"
+          "locations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Location"
             }
           },
-          "is_pickup_ever_available" : {
-            "type" : "boolean"
+          "is_pickup_ever_available": {
+            "type": "boolean"
           },
-          "headline" : {
-            "type" : "string"
+          "headline": {
+            "type": "string"
           },
-          "description_safe_html" : {
-            "type" : "string"
+          "description_safe_html": {
+            "type": "string"
           },
-          "location" : {
-            "type" : "string"
+          "location": {
+            "type": "string"
           },
-          "booking_notes" : {
-            "type" : "string"
+          "booking_notes": {
+            "type": "string"
           },
-          "pk" : {
-            "type" : "integer"
+          "pk": {
+            "type": "integer"
           },
-          "description_text" : {
-            "type" : "string"
+          "description_text": {
+            "type": "string"
           },
-          "customer_prototypes" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CustomerPrototype"
+          "customer_prototypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerPrototype"
             }
           },
-          "tax_percentage" : {
-            "type" : "number",
-            "format" : "float"
+          "tax_percentage": {
+            "type": "number",
+            "format": "float"
           },
-          "name" : {
-            "type" : "string"
+          "name": {
+            "type": "string"
           }
         }
       },
-      "ToursList" : {
-        "type" : "object",
-        "properties" : {
-          "items" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Tour"
-            }
-          }
-        }
-      },
-      "CustomerTypeRateAvailability" : {
-        "type" : "object",
-        "properties" : {
-          "customer_prototype" : {
-            "$ref" : "#/components/schemas/CustomerPrototype"
-          },
-          "capacity" : {
-            "type" : "integer"
-          },
-          "minimum_party_size" : {
-            "type" : "integer"
-          },
-          "customer_type" : {
-            "$ref" : "#/components/schemas/CustomerType"
-          },
-          "maximum_party_size" : {
-            "type" : "integer"
-          },
-          "pk" : {
-            "type" : "integer"
-          }
-        }
-      },
-      "Availability" : {
-        "type" : "object",
-        "properties" : {
-          "start_at" : {
-            "type" : "string"
-          },
-          "capacity" : {
-            "type" : "integer"
-          },
-          "customer_type_rates" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CustomerTypeRateAvailability"
-            }
-          },
-          "minimum_party_size" : {
-            "type" : "integer"
-          },
-          "end_at" : {
-            "type" : "string"
-          },
-          "maximum_party_size" : {
-            "type" : "integer"
-          },
-          "pk" : {
-            "type" : "integer"
-          }
-        }
-      },
-      "AvailabilitiesList" : {
-        "type" : "object",
-        "properties" : {
-          "availabilities" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Availability"
+      "ToursList": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tour"
             }
           }
         }
       },
-      "CustomFieldInstance" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
+      "CustomerTypeRateAvailability": {
+        "type": "object",
+        "properties": {
+          "customer_prototype": {
+            "$ref": "#/components/schemas/CustomerPrototype"
           },
-          "custom_field" : {
-            "$ref" : "#/components/schemas/CustomField"
+          "capacity": {
+            "type": "integer"
+          },
+          "minimum_party_size": {
+            "type": "integer"
+          },
+          "customer_type": {
+            "$ref": "#/components/schemas/CustomerType"
+          },
+          "maximum_party_size": {
+            "type": "integer"
+          },
+          "pk": {
+            "type": "integer"
           }
         }
       },
-      "CustomField" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
+      "Availability": {
+        "type": "object",
+        "properties": {
+          "start_at": {
+            "type": "string"
           },
-          "type" : {
-            "type" : "string"
+          "capacity": {
+            "type": "integer"
+          },
+          "customer_type_rates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerTypeRateAvailability"
+            }
+          },
+          "minimum_party_size": {
+            "type": "integer"
+          },
+          "end_at": {
+            "type": "string"
+          },
+          "maximum_party_size": {
+            "type": "integer"
+          },
+          "pk": {
+            "type": "integer"
           }
         }
       },
-      "AvailabilityItem" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
-          },
-          "name" : {
-            "type" : "string"
-          }
-        }
-      },
-      "AvailabilityCustomerTypeRates" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
-          },
-          "total" : {
-            "type" : "integer"
-          },
-          "capacity" : {
-            "type" : "integer"
-          },
-          "customer_type" : {
-            "$ref" : "#/components/schemas/CustomerType"
-          },
-          "customer_prototype" : {
-            "$ref" : "#/components/schemas/CustomerBookingPrototype"
-          },
-          "custom_field_instances" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CustomFieldInstance"
+      "AvailabilitiesList": {
+        "type": "object",
+        "properties": {
+          "availabilities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Availability"
             }
           }
         }
       },
-      "AvailabilityDetail" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
+      "CustomFieldInstance": {
+        "type": "object",
+        "properties": {
+          "pk": {
+            "type": "integer"
           },
-          "start_at" : {
-            "type" : "string"
+          "custom_field": {
+            "$ref": "#/components/schemas/CustomField"
+          }
+        }
+      },
+      "CustomField": {
+        "type": "object",
+        "properties": {
+          "pk": {
+            "type": "integer"
           },
-          "end_at" : {
-            "type" : "string"
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "AvailabilityItem": {
+        "type": "object",
+        "properties": {
+          "pk": {
+            "type": "integer"
           },
-          "capacity" : {
-            "type" : "integer"
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "AvailabilityCustomerTypeRates": {
+        "type": "object",
+        "properties": {
+          "pk": {
+            "type": "integer"
           },
-          "item" : {
-            "$ref" : "#/components/schemas/AvailabilityItem"
+          "total": {
+            "type": "integer"
           },
-          "customer_type_rates" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/AvailabilityCustomerTypeRates"
+          "capacity": {
+            "type": "integer"
+          },
+          "customer_type": {
+            "$ref": "#/components/schemas/CustomerType"
+          },
+          "customer_prototype": {
+            "$ref": "#/components/schemas/CustomerBookingPrototype"
+          },
+          "custom_field_instances": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomFieldInstance"
             }
           }
         }
       },
-      "CustomerTypeRate" : {
-        "type" : "object",
-        "properties" : {
-          "customer_type_rate" : {
-            "type" : "integer"
-          }
-        }
-      },
-      "Contact" : {
-        "type" : "object",
-        "properties" : {
-          "name" : {
-            "type" : "string"
+      "AvailabilityDetail": {
+        "type": "object",
+        "properties": {
+          "pk": {
+            "type": "integer"
           },
-          "phone" : {
-            "type" : "string"
+          "start_at": {
+            "type": "string"
           },
-          "email" : {
-            "type" : "string"
-          }
-        }
-      },
-      "Booking" : {
-        "type" : "object",
-        "properties" : {
-          "rebooking" : {
-            "type" : "string"
+          "end_at": {
+            "type": "string"
           },
-          "voucher_number" : {
-            "type" : "string"
+          "capacity": {
+            "type": "integer"
           },
-          "contact" : {
-            "$ref" : "#/components/schemas/Contact"
+          "item": {
+            "$ref": "#/components/schemas/AvailabilityItem"
           },
-          "customers" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CustomerTypeRate"
+          "customer_type_rates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AvailabilityCustomerTypeRates"
             }
           }
         }
       },
-      "BookingValidateResponse" : {
-        "type" : "object",
-        "properties" : {
-          "is_bookable" : {
-            "type" : "boolean"
-          },
-          "code" : {
-            "type" : "string"
-          },
-          "error" : {
-            "type" : "string"
+      "CustomerTypeRate": {
+        "type": "object",
+        "properties": {
+          "customer_type_rate": {
+            "type": "integer"
           }
         }
       },
-      "BookingResponseAvailability" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
+      "Contact": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
           },
-          "start_at" : {
-            "type" : "string"
+          "phone": {
+            "type": "string"
           },
-          "end_at" : {
-            "type" : "string"
-          },
-          "capacity" : {
-            "type" : "integer"
-          },
-          "item" : {
-            "$ref" : "#/components/schemas/BookingResponseAvailabilityItem"
-          },
-          "customer_type_rates" : {
-            "$ref" : "#/components/schemas/CustomerTypeRateResponse"
+          "email": {
+            "type": "string"
           }
         }
       },
-      "BookingResponseAvailabilityItem" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
+      "Booking": {
+        "type": "object",
+        "properties": {
+          "note": {
+            "type": "string"
           },
-          "name" : {
-            "type" : "string"
+          "voucher_number": {
+            "type": "string"
+          },
+          "rebooking": {
+            "type": "string"
+          },
+          "contact": {
+            "$ref": "#/components/schemas/Contact"
+          },
+          "customers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerTypeRate"
+            }
           }
         }
       },
-      "BookingResponseObject" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
+      "Note": {
+        "type": "object",
+        "properties": {
+          "note": {
+            "type": "string"
+          }
+        }
+      },
+      "BookingValidateResponse": {
+        "type": "object",
+        "properties": {
+          "is_bookable": {
+            "type": "boolean"
           },
-          "uuid" : {
-            "type" : "string"
+          "code": {
+            "type": "string"
           },
-          "status" : {
-            "type" : "string"
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "BookingResponseAvailability": {
+        "type": "object",
+        "properties": {
+          "pk": {
+            "type": "integer"
           },
-          "availability" : {
-            "$ref" : "#/components/schemas/BookingResponseAvailability"
+          "start_at": {
+            "type": "string"
           },
-          "contact" : {
-            "$ref" : "#/components/schemas/Contact"
+          "end_at": {
+            "type": "string"
           },
-          "customers" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Customer"
+          "capacity": {
+            "type": "integer"
+          },
+          "item": {
+            "$ref": "#/components/schemas/BookingResponseAvailabilityItem"
+          },
+          "customer_type_rates": {
+            "$ref": "#/components/schemas/CustomerTypeRateResponse"
+          }
+        }
+      },
+      "BookingResponseAvailabilityItem": {
+        "type": "object",
+        "properties": {
+          "pk": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "BookingResponseObject": {
+        "type": "object",
+        "properties": {
+          "pk": {
+            "type": "integer"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "availability": {
+            "$ref": "#/components/schemas/BookingResponseAvailability"
+          },
+          "contact": {
+            "$ref": "#/components/schemas/Contact"
+          },
+          "customers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Customer"
             }
           },
-          "invoice_price" : {
-            "type" : "integer"
+          "invoice_price": {
+            "type": "integer"
           },
-          "order" : {
-            "type" : "string"
+          "order": {
+            "type": "string"
           }
         }
       },
-      "BookingResponse" : {
-        "type" : "object",
-        "properties" : {
-          "booking" : {
-            "$ref" : "#/components/schemas/BookingResponseObject"
+      "BookingResponse": {
+        "type": "object",
+        "properties": {
+          "booking": {
+            "$ref": "#/components/schemas/BookingResponseObject"
           }
         }
       },
-      "CustomerCheckInStatus" : {
-        "type" : "object",
-        "properties" : {
-          "name" : {
-            "type" : "string"
+      "CustomerCheckInStatus": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
           },
-          "type" : {
-            "type" : "string"
+          "type": {
+            "type": "string"
           }
         }
       },
-      "Customer" : {
-        "type" : "object",
-        "properties" : {
-          "checkin_url" : {
-            "type" : "string"
+      "Customer": {
+        "type": "object",
+        "properties": {
+          "checkin_url": {
+            "type": "string"
           },
-          "checkin_status" : {
-            "$ref" : "#/components/schemas/CustomerCheckInStatus"
+          "checkin_status": {
+            "$ref": "#/components/schemas/CustomerCheckInStatus"
           },
-          "customer_type_rate" : {
-            "$ref" : "#/components/schemas/CustomerTypeRateResponse"
+          "customer_type_rate": {
+            "$ref": "#/components/schemas/CustomerTypeRateResponse"
           }
         }
       },
-      "CustomerTypeRateResponse" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
+      "CustomerTypeRateResponse": {
+        "type": "object",
+        "properties": {
+          "pk": {
+            "type": "integer"
           },
-          "total" : {
-            "type" : "integer"
+          "total": {
+            "type": "integer"
           },
-          "capacity" : {
-            "type" : "integer"
+          "capacity": {
+            "type": "integer"
           },
-          "is_exclusive" : {
-            "type" : "boolean"
+          "is_exclusive": {
+            "type": "boolean"
           },
-          "customer_type" : {
-            "$ref" : "#/components/schemas/CustomerType"
+          "customer_type": {
+            "$ref": "#/components/schemas/CustomerType"
           },
-          "customer_prototype" : {
-            "$ref" : "#/components/schemas/CustomerBookingPrototype"
+          "customer_prototype": {
+            "$ref": "#/components/schemas/CustomerBookingPrototype"
           }
         }
       },
-      "CustomerType" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
+      "CustomerType": {
+        "type": "object",
+        "properties": {
+          "pk": {
+            "type": "integer"
           },
-          "singular" : {
-            "type" : "string"
+          "singular": {
+            "type": "string"
           },
-          "plural" : {
-            "type" : "string"
+          "plural": {
+            "type": "string"
           },
-          "note" : {
-            "type" : "string"
+          "note": {
+            "type": "string"
           }
         }
       },
-      "CustomerBookingPrototype" : {
-        "type" : "object",
-        "properties" : {
-          "pk" : {
-            "type" : "integer"
+      "CustomerBookingPrototype": {
+        "type": "object",
+        "properties": {
+          "pk": {
+            "type": "integer"
           },
-          "display_name" : {
-            "type" : "string"
+          "display_name": {
+            "type": "string"
           },
-          "total" : {
-            "type" : "integer"
+          "total": {
+            "type": "integer"
           }
         }
       }
     },
-    "securitySchemes" : {
-      "apiApp" : {
-        "type" : "apiKey",
-        "name" : "X-FareHarbor-API-App",
-        "in" : "header"
+    "securitySchemes": {
+      "apiApp": {
+        "type": "apiKey",
+        "name": "X-FareHarbor-API-App",
+        "in": "header"
       },
-      "apiUser" : {
-        "type" : "apiKey",
-        "name" : "X-FareHarbor-API-User",
-        "in" : "header"
+      "apiUser": {
+        "type": "apiKey",
+        "name": "X-FareHarbor-API-User",
+        "in": "header"
       }
     }
   }
